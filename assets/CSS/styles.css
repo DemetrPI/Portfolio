@@ -573,13 +573,13 @@
   }
   
   .contactTypes .flexContainer .typeBox .lni-calendar {
-    color: #1267d0;
-    background-color: #E7EFFA;
+    color: var(--mainColor);
+    background-color: var(--secondaryColor);
   }
   
   .contactTypes .flexContainer .typeBox .lni-envelope {
-    color: #82c690;
-    background-color: #F3F9F4;
+    color: var(--mainColor);
+    background-color: var(--secondaryColor);
   }
   
   .contactTypes .flexContainer .typeBox a {
