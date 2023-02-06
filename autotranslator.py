@@ -9,7 +9,7 @@ import xlrd
 
 
 
-sourceFile = input ("Enter HTML file name to parse and translate: ")
+sourceFile = "index.html"
 with open(sourceFile) as fp:
     soup = BeautifulSoup(fp, 'html.parser')
 
@@ -21,7 +21,7 @@ outputText = [] #cleared text for further translation
 outputKeys = [] #keys for text to create new dict with translation
 
 # list of tags where text to be translated may present, you may correct it according those used in your project. 
-tagList = ["title", "p", "span", "h1", "h2", "h3", "h4", "h5", "h6","strong" , "label", "header", "form"]
+tagList = ["title", "p", "h1", "h2", "h3", "h4", "h5", "h6", "header", "form", "li", "span"]
 
 
 
@@ -37,7 +37,7 @@ def argument_insert(argument):
                 origin.update({key: value})
                 outputText.append(value)
                 outputKeys.append(key)
-                # argument['class'] = argument.get('class',[]) +["translate"+str(counter)] #applying new class as a mark for translation
+                argument['class'] = argument.get('class',[]) +["translate"+str(counter)] #applying new class as a mark for translation
                 counter +=1
     return counter #counter is used for end-to-end numbering, so global variable is used
 
@@ -60,7 +60,7 @@ def convert_xlx_to_list(translatedFile):
         key +=1
     return translated    
 
-#output HTML file
+# # output HTML file
 # def output_to_HTML(outputHTML,soup):
 #     output = open (outputHTML, 'w')
 #     newSoup = soup.prettify() #prettify output HTML file
@@ -100,6 +100,6 @@ if len(outputJsonFile)<1:
     outputJsonFile = "output.json"
     
 
-outputJson = {"origin": origin, "translation":translated}
+outputJson = {"origin": origin, "ukr":translated}
 jsonObject = json.dumps(outputJson,ensure_ascii=False, indent=4)
 write_json_to_file(jsonObject, outputJsonFile)

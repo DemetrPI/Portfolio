@@ -30,8 +30,6 @@ if (window.innerWidth <= 990) {
   index.menu.classList.add("sideMenuHide");
   index.menu.classList.remove("sideMenuShow");
   index.scrollDown.style.display = "none";
-
-  
 }
 
 if (window.innerWidth > 990) {
@@ -48,7 +46,6 @@ if (window.innerWidth > 990) {
 
 // Menu button click event
 index.menuButton.addEventListener("click", index.showHideMenu);
-
 
 // Hide menu when clicking a link
 for (let i = 0; i < index.navItem.length; i++) {
