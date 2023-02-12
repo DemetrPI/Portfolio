@@ -26,6 +26,14 @@ if (location.hash.substring(1) === "eng") {
   }
 }
 
+
+document.getElementById("england").addEventListener('click', () => {
+  window.location.hash = "#eng"
+  window.location.reload(true);
+});
+
+
+
 for (const [key, value] of Object.entries(countries)) {
   const currentCountry = document.getElementsByClassName(value);
   for (var country of currentCountry) {
