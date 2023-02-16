@@ -60,11 +60,11 @@ def convert_xlx_to_list(translatedFile):
         key +=1
     return translated    
 
-# # output HTML file
-# def output_to_HTML(outputHTML,soup):
-#     output = open (outputHTML, 'w')
-#     newSoup = soup.prettify() #prettify output HTML file
-#     output.write(newSoup)
+# output HTML file
+def output_to_HTML(outputHTML,soup):
+    output = open (outputHTML, 'w')
+    newSoup = soup.prettify() #prettify output HTML file
+    output.write(newSoup)
 
 #write data to Json file
 def write_json_to_file(json_obj, outputJsonFile):
@@ -76,10 +76,10 @@ for argument in tagList:
     argument_insert(argument)
 
 
-# outputHTML = input("Input file name for modified HTML file (default is output.html): ")
-# if len(outputHTML)<1:
-#     outputHTML = "output.html"
-# output_to_HTML(outputHTML, soup)
+outputHTML = input("Input file name for modified HTML file (default is output.html): ")
+if len(outputHTML)<1:
+    outputHTML = "output.html"
+output_to_HTML(outputHTML, soup)
 
 
 #Google Translate doesn`t support .txt files, only .doc, .pdf, .xlsx and some other types, so output file is Excel.
