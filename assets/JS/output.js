@@ -112,7 +112,7 @@ const language = {
         "translate54": " ПРИВІТ!"
     },
     "pl": {
-        "translate0": " Dmytro Pishshcenkov - Front-end Web Developer",
+        "translate0": " Dmytro Piszczenkow - Front-end Web Developer",
         "translate1": " DP",
         "translate2": " CZEŚĆ! JESTEM",
         "translate3": " Programista Front-End, który pomaga ludziom tworzyć różnorodne aplikacje i strony internetowe",
