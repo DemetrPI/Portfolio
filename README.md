@@ -1,4 +1,4 @@
-# Portfolio Website by DemetrPI
+# My portfolio repository
 https://demetrpi.github.io/Portfolio/
 
 Welcome to the repository for my portfolio website. This website showcases my skills, projects, and experiences as a web developer.
