@@ -15,7 +15,6 @@ Welcome to the repository for my portfolio website. This website showcases my sk
 
 This project is created with:
 
-- [React](https://reactjs.org/)
 - [JavaScript](https://www.javascript.com/)
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
