@@ -14,27 +14,23 @@ const pl = Object.entries(language.pl);
 var key, value, selector;
 
 if (location.hash.substring(1) === "eng") {
-  } else if (location.hash.substring(1) === "ukr") {
+} else if (location.hash.substring(1) === "ukr") {
   for ([key, value] of ukr) {
     selector = "." + key;
     document.querySelector(selector).textContent = value;
-    
   }
 } else if (location.hash.substring(1) === "pl") {
   for ([key, value] of pl) {
     selector = "." + key;
     document.querySelector(selector).textContent = value;
-    document.querySelector("#resume").href = "./assets/curriculum_pl.pdf"
+    document.querySelector("#resume").href = "./assets/curriculum_pl.pdf";
   }
 }
 
-
-document.getElementById("england").addEventListener('click', () => {
-  window.location.hash = "#eng"
+document.getElementById("england").addEventListener("click", () => {
+  window.location.hash = "#eng";
   window.location.reload(true);
 });
-
-
 
 for (const [key, value] of Object.entries(countries)) {
   const currentCountry = document.getElementsByClassName(value);
