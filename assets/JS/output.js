@@ -40,7 +40,7 @@ const language = {
     translate35: " Translations are saved in separete JS file",
     translate36: " The project was made for a real small business",
     translate37:
-      " It is written in Python Django framework, using HTML and CSS ",
+      "It is written in Python Django framework, using HTML and CSS, deployed using Docker and Fly.Dev ",
     translate38:
       " Site has been made in three languages: Ukrainian, English, Polish, including database, payment services and adding dishes to menu directly from the website has been implemented ",
     translate40: " HOME ",
@@ -127,7 +127,7 @@ const language = {
     translate35: "Переклади зберігаються у окремому файлі JS",
     translate36: "Проект створений для реального малого бізнесу",
     translate37:
-      "Написаний на фреймворку Python Django з використанням HTML та CSS",
+      "Зроблений на фреймворку Python Django, з використанням HTML та CSS, розміщений на сервісі Fly.Dev, з застосуванням Docker",
     translate38:
       "Сайт створений на трьох мовах: українська, англійська, польська, включаючи базу даних, платіжні сервіси та можливість додавання страв до меню безпосередньо з веб-сайту",
     translate40: "ГОЛОВНА",
@@ -214,7 +214,7 @@ const language = {
     translate35: "Tłumaczenia są zapisywane w oddzielnym pliku JS",
     translate36: "Projekt został wykonany dla rzeczywistego małego biznesu",
     translate37:
-      "Napisany w oparciu o framework Python Django, wykorzystujący HTML i CSS",
+      "Jest napisane w frameworku Python Django, przy użyciu HTML i CSS, wdrożone za pomocą Docker i Fly.Dev.",
     translate38:
       "Strona została stworzona w trzech językach: ukraiński, angielski, polski, w tym baza danych, usługi płatności i dodawanie dań do menu bezpośrednio ze strony",
     translate40: "STRONA GŁÓWNA",
