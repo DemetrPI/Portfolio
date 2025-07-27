@@ -1,5 +1,5 @@
 # My portfolio repository
-https://cv.i-dmytro.pl/
+https://about_me.i-dmytro.org/
 
 Welcome to the repository for my portfolio website. This website showcases my skills, projects, and experiences as a web developer.
 
