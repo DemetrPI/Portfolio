@@ -1,50 +1,93 @@
-# My portfolio repository
-https://cv.i-dmytro.org/
+# Dmytro Pishchenkov Portfolio
 
-Welcome to the repository for my portfolio website. This website showcases my skills, projects, and experiences as a web developer.
+Modern portfolio landing page for Platform Engineering, Cloud Operations, and DevSecOps work.
 
-## Table of Contents
+## Stack
 
-- [Technologies](#technologies)
-- [Setup](#setup)
-- [Features](#features)
-- [Contributing](#contributing)
-- [License](#license)
+- Vite
+- React
+- Chakra UI
+- i18next / react-i18next
+- Lucide React icons
 
-## Technologies
+## Current Direction
 
-This project is created with:
+The portfolio is being refactored from an older static HTML/CSS/JavaScript site into a React application. The new positioning focuses on:
 
-- [JavaScript](https://www.javascript.com/)
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- Kubernetes and cloud platform engineering
+- Infrastructure as Code with Terraform
+- Cloud security and DevSecOps
+- Automation with Go, Python, and Bash
+- Observability and enterprise cloud operations
 
-## Setup
+## Languages And Themes
 
-To run this project, install it locally using npm:
+The site supports three languages:
 
+- English
+- Ukrainian
+- Polish
+
+Language selection is handled by `i18next`. The visual palette changes with the selected language:
+
+- English: blue, red, and white
+- Ukrainian: blue and yellow
+- Polish: red and white
+
+## Development
+
+Install dependencies:
+
+```bash
+npm install
 ```
-$ git clone https://github.com/DemetrPI/Portfolio.git
-$ cd Portfolio
-$ npm install
-$ npm start
+
+Start the dev server:
+
+```bash
+npm run dev
 ```
 
-## Features
+Build for production:
 
-- Responsive design
-- Comprehensive showcase of my projects
-- Direct links to my other repositories
-- Contact form for direct communication
+```bash
+npm run build
+```
 
-## Contributing
+Preview the production build:
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+```bash
+npm run preview
+```
 
-## License
+## Deployment
 
-[MIT](https://choosealicense.com/licenses/mit/)
+The selected hosting target is Azure Static Web Apps.
 
-## Contact
+Recommended Azure settings:
 
-Created by [@DemetrPI](https://github.com/DemetrPI) - feel free to contact me!
+- App location: `/`
+- API location: empty
+- Output location: `dist`
+- Build command: `npm run build`
+
+The repository includes:
+
+- `.github/workflows/azure-static-web-apps.yml` for GitHub Actions deployment
+- `public/staticwebapp.config.json` for SPA fallback and basic security headers
+
+Create a GitHub secret named `AZURE_STATIC_WEB_APPS_API_TOKEN` with the deployment token from Azure Static Web Apps. If Azure generates a different secret name, either rename the secret or update the workflow.
+
+## Project Content
+
+The current project cards are placeholders for:
+
+- Secure OPSEC Communication Protocol
+- Serverless Multi-language Web Application
+- Multi-Cloud IaC & Automated Deployment
+
+Final live demo and repository links will be added after the first refactor pass is reviewed.
+
+## Notes
+
+The previous static assets and helper scripts are still present during the transition so the old implementation can be referenced if needed. They can be removed once the React version is accepted.
