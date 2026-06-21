@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Dmytro Pishchenkov DevOps favicon">
+  <defs>
+    <linearGradient id="flagGlow" x1="8" x2="56" y1="8" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0057b7" />
+      <stop offset="0.48" stop-color="#2f78d6" />
+      <stop offset="1" stop-color="#ffd700" />
+    </linearGradient>
+    <linearGradient id="opsPanel" x1="14" x2="50" y1="12" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#18243a" />
+      <stop offset="1" stop-color="#0b1220" />
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#0057b7" flood-opacity="0.35" />
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#eef6ff" />
+  <path d="M32 6 54 19v26L32 58 10 45V19L32 6Z" fill="url(#flagGlow)" filter="url(#shadow)" />
+  <path d="M32 11 49 21v22L32 53 15 43V21L32 11Z" fill="url(#opsPanel)" />
+  <path
+    d="M23.5 31.4h18.7a6.2 6.2 0 0 0 .6-12.4 10.2 10.2 0 0 0-19.2-2.7 7.6 7.6 0 0 0-.1 15.1Z"
+    fill="none"
+    stroke="#f8fbff"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="3"
+  />
+  <path d="m25 40-5 4 5 4" fill="none" stroke="#ffd700" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+  <path d="M32 48h10" fill="none" stroke="#5fb4ff" stroke-linecap="round" stroke-width="3" />
+  <circle cx="46" cy="40" r="3" fill="#ffd700" />
+  <circle cx="18" cy="24" r="2.5" fill="#5fb4ff" />
+  <path d="M20.5 24h5.5M43 40h-5" fill="none" stroke="#5fb4ff" stroke-linecap="round" stroke-width="2" />
+</svg>
