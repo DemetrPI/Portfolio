@@ -17,8 +17,7 @@ export const resources = {
         title: "Dmytro Pishchenkov",
         subtitle:
           "Software Engineer focused on Kubernetes, cloud infrastructure, security, and automation.",
-        body:
-          "I build and operate reliable cloud platforms with Terraform, Kubernetes, Go, Python, and a security-first mindset shaped by enterprise support and compliance experience.",
+        body: "I build and operate reliable cloud platforms with Terraform, Kubernetes, Go, Python, and a security-first mindset shaped by enterprise support and compliance experience.",
         resume: "Resume placeholder",
         github: "GitHub",
         linkedin: "LinkedIn",
@@ -26,8 +25,7 @@ export const resources = {
       about: {
         eyebrow: "Profile",
         title: "From compliance thinking to resilient platforms",
-        body:
-          "My background combines cloud security support, infrastructure automation, and legal/compliance analysis. That mix helps me approach platform work with a strong bias for auditability, controlled change, and zero-downtime operations.",
+        body: "My background combines cloud security support, infrastructure automation, and legal/compliance analysis. That mix helps me approach platform work with a strong bias for auditability, controlled change, and zero-downtime operations.",
         highlights: [
           "Kubernetes abstractions and operator-style automation",
           "Infrastructure as Code for repeatable cloud environments",
@@ -36,24 +34,23 @@ export const resources = {
       },
       experience: {
         eyebrow: "Enterprise background",
-        title: "Support experience in serious production environments",
-        body:
-          "Alongside platform engineering work, I bring enterprise support exposure from Microsoft-focused customer environments through the LTI Mindtree/vendor delivery model, plus Cisco/Splunk ecosystem troubleshooting.",
+        title: "Scaling, securing, and optimizing enterprise infrastructure",
+        body: "My background spans deep technical security support for Microsoft cloud ecosystems and large-scale infrastructure automation, optimization, and platform engineering work across Cisco / Splunk environments.",
         items: [
           {
-            title: "Microsoft enterprise support",
+            title: "Microsoft Defender for Cloud support (via LTIMindtree)",
             description:
-              "Customer-facing support context around cloud security, operational reliability, escalation handling, and production troubleshooting.",
+              "Provided advanced DevSecOps support for enterprise environments, focusing on Cloud Security Posture Management, workload protection, and complex cloud security incident resolution.",
           },
           {
-            title: "Cisco / Splunk ecosystem",
+            title: "Splunk (Cloud Operations)",
             description:
-              "Exposure to observability-driven diagnostics, support workflows, and infrastructure incident analysis.",
+              "Worked on large-scale AWS RDS fleet upgrade project and Intel-to-Graviton migrations with Terraform and Python, contributing $500k+ in cost savings. Built SPL-based observability dashboard to track infrastructure state and lifecycle events.",
           },
           {
-            title: "Operational discipline",
+            title: "Platform Engineering (Cisco/Splunk)",
             description:
-              "Comfort with structured communication, audit-aware changes, incident notes, and cross-team coordination.",
+              "Extending Cisco / Splunk platform work into Kubernetes operator development, building higher-level abstractions for stateful workloads in Go. Focused on PostgreSQL Day-1/Day-2 lifecycle automation, leveraging AI-augmented workflows for rapid iteration and debugging.",
           },
         ],
       },
@@ -63,7 +60,14 @@ export const resources = {
         groups: [
           {
             title: "Cloud & Orchestration",
-            items: ["AWS", "Azure", "Oracle Cloud", "GCP", "Kubernetes", "Docker"],
+            items: [
+              "AWS",
+              "Azure",
+              "Oracle Cloud",
+              "GCP",
+              "Kubernetes",
+              "Docker",
+            ],
           },
           {
             title: "IaC & CI/CD",
@@ -85,43 +89,57 @@ export const resources = {
           },
           {
             title: "Data & Observability",
-            items: ["PostgreSQL", "Splunk", "Prometheus", "Firebase"],
+            items: [
+              "PostgreSQL",
+              "Splunk",
+              "Prometheus",
+              "Firebase",
+              "MongoDB",
+              "Splunk SPL",
+            ],
           },
         ],
       },
       projects: {
         eyebrow: "Selected work",
-        title: "Platform-oriented project placeholders",
-        note:
-          "Links are placeholders for now. The final live demos and repositories will be connected after the first refactor pass.",
+        title: "Platform engineering projects",
+        note: "Selected projects spanning Kubernetes operator development, serverless delivery, and secure communication infrastructure.",
         live: "Live demo",
         repo: "Repository",
         items: [
           {
-            title: "Secure OPSEC Communication Protocol",
-            focus: "Networking, Security, WebRTC, Linux",
+            title: "Splunk Operator: PostgreSQL Platform Controllers",
+            focus:
+              "Go, Kubernetes, Operators, PostgreSQL, CloudNativePG, AI-Augmented Dev",
             description:
-              "A secure stateless 1:1 communication platform designed for hostile network environments, with encrypted peer-to-peer communication and hardened infrastructure assumptions.",
+              "Engineered core APIs including PostgresCluster, PostgresDatabase, and class-based provisioning primitives to establish a higher-level PostgreSQL platform layer for Splunk on Kubernetes. Added CNPG-backed reconciliation and Day-1/Day-2 lifecycle management for enterprise stateful workloads.",
+            repoUrl:
+              "https://github.com/splunk/splunk-operator/tree/feature/database-controllers",
           },
           {
-            title: "Serverless Multi-language Web Application",
+            title: "Serverless Cloud-Native Web Application",
             focus: "Go, GCP Cloud Run, Docker, Firebase, React",
             description:
-              "A serverless multilingual application with a Go REST API, React frontend, containerized delivery, scale-to-zero runtime, and Firebase-backed state.",
+              "Architected and deployed a multilingual web application with a Go-based REST API and React frontend. Containerized the backend for Google Cloud Run, enabling scale-to-zero delivery, and integrated Firebase for NoSQL-backed state and localization support.",
+            liveUrl: "https://hgame.i-dmytro.org/",
+            repoUrl: "https://github.com/DmytroPI-dev/go-hangman",
           },
           {
-            title: "Multi-Cloud IaC & Automated Deployment",
-            focus: "Terraform, Oracle Cloud, GitHub Actions, Python",
+            title: "Secure Communication Infrastructure",
+            focus: "Go, WebSockets, WebRTC, TURN, AES-GCM, VPS Setup",
             description:
-              "A secure cloud infrastructure setup provisioned with Terraform and deployed through GitHub Actions with isolated networking and automated release flow.",
+              "Architected a secure real-time communication architecture with a Go/Gin signaling backend and WebSocket room coordination. Built a hardened VPS deployment path with custom coturn configuration, DTLS fingerprint verification, ephemeral state cleanup, and AES-GCM payload encryption.",
+            demoNote:
+              "Access rooms using a fictional city and today's date (DDMMYY).",
+            liveUrl: "https://messenger.dmytro-dev.net",
+            repoUrl: "https://github.com/DmytroPI-dev/secure-messenger",
           },
         ],
       },
       contact: {
         eyebrow: "Contact",
         title: "Let’s build reliable infrastructure",
-        body:
-          "I am open to platform engineering, cloud operations, and DevSecOps conversations.",
+        body: "I am open to platform engineering, cloud operations, and DevSecOps conversations.",
         email: "Email",
         schedule: "Schedule",
         formTitle: "Quick message",
@@ -131,7 +149,8 @@ export const resources = {
         message: "Message",
         send: "Send",
       },
-      footer: "© Dmytro Pishchenkov 2026",
+      footer:
+        "© Dmytro Pishchenkov 2026 | Built with React, deployed via CI/CD, and hosted on Microsoft Azure.",
       languageLabel: "Select language",
     },
   },
@@ -153,8 +172,7 @@ export const resources = {
         title: "Дмитро Піщенков",
         subtitle:
           "Software Engineer з фокусом на Kubernetes, хмарну інфраструктуру, безпеку та автоматизацію.",
-        body:
-          "Я створюю та підтримую надійні cloud-платформи з Terraform, Kubernetes, Go, Python і security-first підходом, сформованим enterprise support та compliance досвідом.",
+        body: "Я створюю та підтримую надійні cloud-платформи з Terraform, Kubernetes, Go, Python і security-first підходом, сформованим enterprise support та compliance досвідом.",
         resume: "Резюме placeholder",
         github: "GitHub",
         linkedin: "LinkedIn",
@@ -162,8 +180,7 @@ export const resources = {
       about: {
         eyebrow: "Профіль",
         title: "Від compliance-мислення до стійких платформ",
-        body:
-          "Мій досвід поєднує cloud security support, автоматизацію інфраструктури та юридично-комплаєнсний аналіз. Це допомагає мені будувати платформи з фокусом на auditability, контрольовані зміни та zero-downtime operations.",
+        body: "Мій досвід поєднує cloud security support, автоматизацію інфраструктури та юридично-комплаєнсний аналіз. Це допомагає мені будувати платформи з фокусом на auditability, контрольовані зміни та zero-downtime operations.",
         highlights: [
           "Kubernetes abstraction та operator-style автоматизація",
           "Infrastructure as Code для повторюваних cloud-середовищ",
@@ -172,24 +189,23 @@ export const resources = {
       },
       experience: {
         eyebrow: "Enterprise background",
-        title: "Support-досвід у серйозних production-середовищах",
-        body:
-          "Окрім platform engineering, я маю enterprise support exposure у Microsoft-focused customer environments через LTI Mindtree/vendor delivery model, а також досвід troubleshooting в екосистемі Cisco/Splunk.",
+        title: "Масштабування, захист та оптимізація enterprise-інфраструктури",
+        body: "Мій досвід охоплює глибоку технічну підтримку безпеки для хмарних екосистем Microsoft, а також масштабну автоматизацію інфраструктури, оптимізацію та platform engineering в середовищах Cisco / Splunk.",
         items: [
           {
-            title: "Microsoft enterprise support",
+            title: "Підтримка Microsoft Defender for Cloud (через LTIMindtree)",
             description:
-              "Customer-facing support context навколо cloud security, operational reliability, escalation handling та production troubleshooting.",
+              "Надавав розширену DevSecOps-підтримку для enterprise-середовищ, фокусуючись на Cloud Security Posture Management, захисті робочих навантажень та вирішенні складних інцидентів хмарної безпеки.",
           },
           {
-            title: "Cisco / Splunk ecosystem",
+            title: "Splunk (Cloud Operations)",
             description:
-              "Досвід observability-driven diagnostics, support workflows та infrastructure incident analysis.",
+              "Працював над масштабним проєктом оновлення парку AWS RDS та міграціями з Intel на Graviton за допомогою Terraform і Python, що принесло понад $500 тис. економії. Розробив SPL-дашборд для моніторингу стану інфраструктури та подій життєвого циклу.",
           },
           {
-            title: "Operational discipline",
+            title: "Platform Engineering (Cisco/Splunk)",
             description:
-              "Structured communication, audit-aware changes, incident notes та cross-team coordination.",
+              "Перехід від підтримки платформ Cisco/Splunk до розробки Kubernetes-операторів, створення високорівневих абстракцій для stateful-навантажень на Go. Фокус на автоматизації Day-1/Day-2 життєвого циклу PostgreSQL з використанням AI-асистування для швидкої ітерації та дебагінгу.",
           },
         ],
       },
@@ -199,7 +215,14 @@ export const resources = {
         groups: [
           {
             title: "Cloud & Orchestration",
-            items: ["AWS", "Azure", "Oracle Cloud", "GCP", "Kubernetes", "Docker"],
+            items: [
+              "AWS",
+              "Azure",
+              "Oracle Cloud",
+              "GCP",
+              "Kubernetes",
+              "Docker",
+            ],
           },
           {
             title: "IaC & CI/CD",
@@ -221,43 +244,57 @@ export const resources = {
           },
           {
             title: "Data & Observability",
-            items: ["PostgreSQL", "Splunk", "Prometheus", "Firebase"],
+            items: [
+              "PostgreSQL",
+              "Splunk",
+              "Prometheus",
+              "Firebase",
+              "MongoDB",
+              "Splunk SPL",
+            ],
           },
         ],
       },
       projects: {
         eyebrow: "Вибрані роботи",
-        title: "Platform-oriented project placeholders",
-        note:
-          "Посилання поки що є placeholder. Фінальні live demo та репозиторії будуть додані після першого етапу рефакторингу.",
+        title: "Platform engineering проєкти",
+        note: "Вибрані проєкти, що охоплюють розробку Kubernetes-операторів, serverless-доставку та безпечну комунікаційну інфраструктуру.",
         live: "Live demo",
         repo: "Repository",
         items: [
           {
-            title: "Secure OPSEC Communication Protocol",
-            focus: "Networking, Security, WebRTC, Linux",
+            title: "Splunk Operator: PostgreSQL Platform Controllers",
+            focus:
+              "Go, Kubernetes, Operators, PostgreSQL, CloudNativePG, AI-Augmented Dev",
             description:
-              "Безпечна stateless 1:1 communication platform для hostile network environments з encrypted peer-to-peer communication та hardened infrastructure assumptions.",
+              "Розробив ключові API, включаючи PostgresCluster, PostgresDatabase та примітиви class-based provisioning для створення високорівневого прошарку розгортання PostgreSQL для Splunk у Kubernetes. Додав CNPG-backed reconciliation та управління Day-1/Day-2 життєвим циклом для enterprise stateful навантажень.",
+            repoUrl:
+              "https://github.com/splunk/splunk-operator/tree/feature/database-controllers",
           },
           {
-            title: "Serverless Multi-language Web Application",
+            title: "Serverless Cloud-Native Web Application",
             focus: "Go, GCP Cloud Run, Docker, Firebase, React",
             description:
-              "Serverless multilingual application з Go REST API, React frontend, containerized delivery, scale-to-zero runtime та Firebase-backed state.",
+              "Спроєктував та розгорнув багатомовний вебзастосунок з Go REST API та React фронтендом. Контейнеризував бекенд для Google Cloud Run (scale-to-zero) та інтегрував Firebase для NoSQL управління станом та підтримки локалізації.",
+            liveUrl: "https://hgame.i-dmytro.org/",
+            repoUrl: "https://github.com/DmytroPI-dev/go-hangman",
           },
           {
-            title: "Multi-Cloud IaC & Automated Deployment",
-            focus: "Terraform, Oracle Cloud, GitHub Actions, Python",
+            title: "Secure Communication Infrastructure",
+            focus: "Go, WebSockets, WebRTC, TURN, AES-GCM, VPS Setup",
             description:
-              "Secure cloud infrastructure setup, provisioned with Terraform та deployed through GitHub Actions з isolated networking і automated release flow.",
+              "Спроєктував архітектуру безпечної комунікації в реальному часі з сигнальним бекендом на Go/Gin та WebSocket-координацією кімнат. Побудував захищений (hardened) шлях розгортання VPS з кастомною конфігурацією coturn, перевіркою DTLS fingerprint, ефемерним очищенням стану та AES-GCM шифруванням корисного навантаження.",
+            demoNote:
+              "Для доступу до кімнат використовуйте вигадане місто та поточну дату (DDMMYY).",
+            liveUrl: "https://messenger.dmytro-dev.net",
+            repoUrl: "https://github.com/DmytroPI-dev/secure-messenger",
           },
         ],
       },
       contact: {
         eyebrow: "Контакти",
         title: "Побудуймо надійну інфраструктуру",
-        body:
-          "Я відкритий до розмов про platform engineering, cloud operations та DevSecOps.",
+        body: "Я відкритий до розмов про platform engineering, cloud operations та DevSecOps.",
         email: "Email",
         schedule: "Запланувати",
         formTitle: "Коротке повідомлення",
@@ -267,7 +304,8 @@ export const resources = {
         message: "Повідомлення",
         send: "Надіслати",
       },
-      footer: "© Дмитро Піщенков 2026",
+      footer:
+        "© Дмитро Піщенков 2026 | Побудовано на React, розгорнуто через CI/CD та розміщено на Microsoft Azure.",
       languageLabel: "Оберіть мову",
     },
   },
@@ -289,8 +327,7 @@ export const resources = {
         title: "Dmytro Pishchenkov",
         subtitle:
           "Software Engineer skupiony na Kubernetes, infrastrukturze cloud, bezpieczeństwie i automatyzacji.",
-        body:
-          "Buduję i utrzymuję niezawodne platformy cloud z użyciem Terraform, Kubernetes, Go, Python oraz podejścia security-first wynikającego z doświadczenia enterprise support i compliance.",
+        body: "Buduję i utrzymuję niezawodne platformy cloud z użyciem Terraform, Kubernetes, Go, Python oraz podejścia security-first wynikającego z doświadczenia enterprise support i compliance.",
         resume: "CV placeholder",
         github: "GitHub",
         linkedin: "LinkedIn",
@@ -298,8 +335,7 @@ export const resources = {
       about: {
         eyebrow: "Profil",
         title: "Od myślenia compliance do odpornych platform",
-        body:
-          "Moje doświadczenie łączy cloud security support, automatyzację infrastruktury oraz analizę prawną i compliance. Dzięki temu podchodzę do platform engineering z naciskiem na audytowalność, kontrolowane zmiany i zero-downtime operations.",
+        body: "Moje doświadczenie łączy cloud security support, automatyzację infrastruktury oraz analizę prawną i compliance. Dzięki temu podchodzę do platform engineering z naciskiem na audytowalność, kontrolowane zmiany i zero-downtime operations.",
         highlights: [
           "Abstrakcje Kubernetes i automatyzacja w stylu operatorów",
           "Infrastructure as Code dla powtarzalnych środowisk cloud",
@@ -308,24 +344,24 @@ export const resources = {
       },
       experience: {
         eyebrow: "Enterprise background",
-        title: "Support w wymagających środowiskach produkcyjnych",
-        body:
-          "Poza platform engineering mam doświadczenie enterprise support w Microsoft-focused customer environments przez model LTI Mindtree/vendor delivery, a także troubleshooting w ekosystemie Cisco/Splunk.",
+        title:
+          "Skalowanie, zabezpieczanie i optymalizacja infrastruktury enterprise",
+        body: "Moje doświadczenie obejmuje głębokie wsparcie techniczne ds. bezpieczeństwa ekosystemów chmurowych Microsoft, a także automatyzację infrastruktury na dużą skalę, optymalizację i platform engineering w środowiskach Cisco / Splunk.",
         items: [
           {
-            title: "Microsoft enterprise support",
+            title: "Wsparcie Microsoft Defender for Cloud (przez LTIMindtree)",
             description:
-              "Customer-facing support context wokół cloud security, operational reliability, escalation handling i production troubleshooting.",
+              "Zapewniałem zaawansowane wsparcie DevSecOps dla środowisk enterprise, ze szczególnym uwzględnieniem Cloud Security Posture Management, ochrony obciążeń roboczych oraz rozwiązywania złożonych incydentów bezpieczeństwa w chmurze.",
           },
           {
-            title: "Cisco / Splunk ecosystem",
+            title: "Splunk (Cloud Operations)",
             description:
-              "Doświadczenie z observability-driven diagnostics, support workflows i infrastructure incident analysis.",
+              "Pracowałem nad dużym projektem aktualizacji floty AWS RDS oraz migracjami z Intel na Graviton z użyciem Terraform i Python, przyczyniając się do ponad 500 tys. USD oszczędności. Zbudowałem dashboard observability oparty na SPL do śledzenia stanu infrastruktury i zdarzeń cyklu życia.",
           },
           {
-            title: "Operational discipline",
+            title: "Platform Engineering (Cisco/Splunk)",
             description:
-              "Structured communication, audit-aware changes, incident notes i cross-team coordination.",
+              "Rozszerzenie prac nad platformą Cisco / Splunk o rozwój operatorów Kubernetes, budowanie abstrakcji wyższego poziomu dla obciążeń stateful w Go. Skupienie na automatyzacji cyklu życia Day-1/Day-2 PostgreSQL, wykorzystując wspomagane przez AI workflow do szybkiej iteracji i debugowania.",
           },
         ],
       },
@@ -335,7 +371,14 @@ export const resources = {
         groups: [
           {
             title: "Cloud & Orchestration",
-            items: ["AWS", "Azure", "Oracle Cloud", "GCP", "Kubernetes", "Docker"],
+            items: [
+              "AWS",
+              "Azure",
+              "Oracle Cloud",
+              "GCP",
+              "Kubernetes",
+              "Docker",
+            ],
           },
           {
             title: "IaC & CI/CD",
@@ -357,43 +400,57 @@ export const resources = {
           },
           {
             title: "Data & Observability",
-            items: ["PostgreSQL", "Splunk", "Prometheus", "Firebase"],
+            items: [
+              "PostgreSQL",
+              "Splunk",
+              "Prometheus",
+              "Firebase",
+              "MongoDB",
+              "Splunk SPL",
+            ],
           },
         ],
       },
       projects: {
         eyebrow: "Wybrane prace",
-        title: "Platform-oriented project placeholders",
-        note:
-          "Linki są na razie placeholderami. Finalne live demo i repozytoria zostaną podłączone po pierwszym etapie refaktoryzacji.",
+        title: "Platform engineering projekty",
+        note: "Wybrane projekty obejmujące rozwój operatorów Kubernetes, serverless delivery oraz bezpieczną infrastrukturę komunikacyjną.",
         live: "Live demo",
         repo: "Repository",
         items: [
           {
-            title: "Secure OPSEC Communication Protocol",
-            focus: "Networking, Security, WebRTC, Linux",
+            title: "Splunk Operator: PostgreSQL Platform Controllers",
+            focus:
+              "Go, Kubernetes, Operators, PostgreSQL, CloudNativePG, AI-Augmented Dev",
             description:
-              "Bezpieczna stateless 1:1 communication platform dla hostile network environments, z encrypted peer-to-peer communication i hardened infrastructure assumptions.",
+              "Zaprojektowałem kluczowe API, w tym PostgresCluster, PostgresDatabase oraz prymitywy class-based provisioning, aby stworzyć wyższy poziom wdrażania PostgreSQL dla Splunk na Kubernetes. Dodałem CNPG-backed reconciliation i zarządzanie cyklem życia Day-1/Day-2 dla enterprise stateful workloads.",
+            repoUrl:
+              "https://github.com/splunk/splunk-operator/tree/feature/database-controllers",
           },
           {
-            title: "Serverless Multi-language Web Application",
+            title: "Serverless Cloud-Native Web Application",
             focus: "Go, GCP Cloud Run, Docker, Firebase, React",
             description:
-              "Serverless multilingual application z Go REST API, React frontendem, containerized delivery, scale-to-zero runtime i Firebase-backed state.",
+              "Zaprojektowałem i wdrożyłem wielojęzyczną aplikację internetową z Go REST API i frontendem React. Sklasyfikowałem backend dla Google Cloud Run, umożliwiając scale-to-zero, i zintegrowałem Firebase do obsługi stanu NoSQL i wsparcia lokalizacji.",
+            liveUrl: "https://hgame.i-dmytro.org/",
+            repoUrl: "https://github.com/DmytroPI-dev/go-hangman",
           },
           {
-            title: "Multi-Cloud IaC & Automated Deployment",
-            focus: "Terraform, Oracle Cloud, GitHub Actions, Python",
+            title: "Secure Communication Infrastructure",
+            focus: "Go, WebSockets, WebRTC, TURN, AES-GCM, VPS Setup",
             description:
-              "Secure cloud infrastructure setup provisioned with Terraform i deployed through GitHub Actions z isolated networking oraz automated release flow.",
+              "Zaprojektowałem bezpieczną architekturę komunikacji w czasie rzeczywistym z backendem sygnalizacyjnym w Go/Gin i koordynacją pokoi przez WebSocket. Zbudowałem zabezpieczoną ścieżkę wdrażania VPS z niestandardową konfiguracją coturn, weryfikacją DTLS fingerprint, ulotnym czyszczeniem stanu i szyfrowaniem ładunku AES-GCM.",
+            demoNote:
+              "Aby uzyskać dostęp do pokoi, użyj fikcyjnego miasta i dzisiejszej daty (DDMMYY).",
+            liveUrl: "https://messenger.dmytro-dev.net",
+            repoUrl: "https://github.com/DmytroPI-dev/secure-messenger",
           },
         ],
       },
       contact: {
         eyebrow: "Kontakt",
         title: "Zbudujmy niezawodną infrastrukturę",
-        body:
-          "Jestem otwarty na rozmowy o platform engineering, cloud operations i DevSecOps.",
+        body: "Jestem otwarty na rozmowy o platform engineering, cloud operations i DevSecOps.",
         email: "Email",
         schedule: "Umów spotkanie",
         formTitle: "Krótka wiadomość",
@@ -403,7 +460,8 @@ export const resources = {
         message: "Wiadomość",
         send: "Wyślij",
       },
-      footer: "© Dmytro Pishchenkov 2026",
+      footer:
+        "© Dmytro Pishchenkov 2026 | Zbudowane w React, wdrożone przez CI/CD i hostowane na Microsoft Azure.",
       languageLabel: "Wybierz język",
     },
   },
