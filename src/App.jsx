@@ -6,6 +6,7 @@ import {
   Flex,
   Grid,
   Heading,
+  HoverCard,
   HStack,
   Image,
   Input,
@@ -58,6 +59,40 @@ function SectionHeading({ eyebrow, title, palette }) {
         {title}
       </Heading>
     </Stack>
+  );
+}
+
+function ProjectActionHoverCard({ children, label, note, palette, url }) {
+  return (
+    <HoverCard.Root closeDelay={120} openDelay={250} positioning={{ placement: "top" }}>
+      <HoverCard.Trigger asChild>{children}</HoverCard.Trigger>
+      <HoverCard.Positioner>
+        <HoverCard.Content
+          bg="white"
+          border="1px solid"
+          borderColor={palette.border}
+          boxShadow="0 18px 44px rgba(15, 23, 42, 0.16)"
+          maxW="280px"
+          p="4"
+          rounded="xl"
+        >
+          <HoverCard.Arrow />
+          <Stack gap="2">
+            <Text color={palette.text} fontSize="sm" fontWeight="700">
+              {label}
+            </Text>
+            {note ? (
+              <Text color="#64748b" fontSize="xs" lineHeight="1.5">
+                {note}
+              </Text>
+            ) : null}
+            <Text color={palette.primary} fontSize="xs" fontWeight="600" lineHeight="1.5">
+              {url}
+            </Text>
+          </Stack>
+        </HoverCard.Content>
+      </HoverCard.Positioner>
+    </HoverCard.Root>
   );
 }
 
@@ -390,6 +425,9 @@ function App() {
                 <SimpleGrid columns={{ base: 1, lg: 3 }} gap="5">
                   {projects.map((project, index) => {
                     const ProjectIcon = projectIcons[index] || RadioTower;
+                    const hasLiveUrl = Boolean(project.liveUrl && project.liveUrl !== "#");
+                    const hasRepoUrl = Boolean(project.repoUrl && project.repoUrl !== "#");
+
                     return (
                       <Stack
                         bg={palette.cardGradient}
@@ -416,12 +454,44 @@ function App() {
                           </Text>
                         </Stack>
                         <Flex gap="3" mt="auto" wrap="wrap">
-                          <Button as="a" href="#" size="sm" variant="outline">
-                            {t("projects.live")}
-                          </Button>
-                          <Button as="a" bg={palette.buttonGradient} color={currentLanguage === "pl" ? palette.text : "white"} href="#" size="sm">
-                            {t("projects.repo")}
-                          </Button>
+                          {project.liveUrl ? (
+                            <ProjectActionHoverCard
+                              label={t("projects.live")}
+                              note={project.demoNote}
+                              palette={palette}
+                              url={project.liveUrl}
+                            >
+                              <Button
+                                as="a"
+                                href={project.liveUrl}
+                                rel={hasLiveUrl ? "noopener noreferrer" : undefined}
+                                size="sm"
+                                target={hasLiveUrl ? "_blank" : undefined}
+                                variant="outline"
+                              >
+                                {t("projects.live")}
+                              </Button>
+                            </ProjectActionHoverCard>
+                          ) : null}
+                          {project.repoUrl ? (
+                            <ProjectActionHoverCard
+                              label={t("projects.repo")}
+                              palette={palette}
+                              url={project.repoUrl}
+                            >
+                              <Button
+                                as="a"
+                                bg={palette.buttonGradient}
+                                color={currentLanguage === "pl" ? palette.text : "white"}
+                                href={project.repoUrl}
+                                rel={hasRepoUrl ? "noopener noreferrer" : undefined}
+                                size="sm"
+                                target={hasRepoUrl ? "_blank" : undefined}
+                              >
+                                {t("projects.repo")}
+                              </Button>
+                            </ProjectActionHoverCard>
+                          ) : null}
                         </Flex>
                       </Stack>
                     );
