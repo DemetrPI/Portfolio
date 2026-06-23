@@ -21,6 +21,8 @@ export const languageThemes = {
     cardGradient:
       "linear-gradient(135deg, rgba(31, 79, 159, 0.1), rgba(255, 255, 255, 0.95) 46%, rgba(200, 16, 46, 0.1))",
     glow: "0 18px 46px rgba(31, 79, 159, 0.2), 16px 18px 42px rgba(200, 16, 46, 0.16)",
+    buttonGlow:
+      "0 14px 30px rgba(31, 79, 159, 0.3), 10px 14px 28px rgba(200, 16, 46, 0.22)",
     heroGradient:
       "linear-gradient(135deg, rgba(31, 79, 159, 0.14), rgba(200, 16, 46, 0.12) 58%, rgba(255, 255, 255, 0.9))",
   },
@@ -40,6 +42,8 @@ export const languageThemes = {
     cardGradient:
       "linear-gradient(135deg, rgba(0, 87, 183, 0.1), rgba(255, 255, 255, 0.95) 48%, rgba(255, 215, 0, 0.18))",
     glow: "0 18px 42px rgba(0, 87, 183, 0.23), 18px 20px 42px rgba(255, 215, 0, 0.3)",
+    buttonGlow:
+      "0 14px 30px rgba(0, 87, 183, 0.34), 12px 16px 32px rgba(255, 215, 0, 0.38)",
     heroGradient:
       "linear-gradient(135deg, rgba(0, 87, 183, 0.14), rgba(255, 215, 0, 0.24))",
   },
@@ -59,6 +63,8 @@ export const languageThemes = {
     cardGradient:
       "linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 255, 255, 0.96) 52%, rgba(159, 18, 57, 0.1))",
     glow: "0 18px 42px rgba(220, 20, 60, 0.2), 18px 20px 42px rgba(159, 18, 57, 0.12)",
+    buttonGlow:
+      "0 14px 30px rgba(220, 20, 60, 0.3), 10px 14px 28px rgba(159, 18, 57, 0.22)",
     heroGradient:
       "linear-gradient(135deg, rgba(220, 20, 60, 0.13), rgba(255, 255, 255, 0.92))",
   },

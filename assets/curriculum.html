@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dmytro Pishchenkov - CV</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 13mm;
+      }
+
+      :root {
+        --blue: #0057b7;
+        --yellow: #ffd700;
+        --ink: #172033;
+        --muted: #526179;
+        --line: #c7dbff;
+        --soft: #eef6ff;
+        --paper: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f5f8fd;
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        font-size: 10.3pt;
+        line-height: 1.45;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        background: var(--paper);
+        min-height: 271mm;
+        position: relative;
+      }
+
+      .flag-bar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 8px;
+        margin: -13mm -13mm 10mm;
+      }
+
+      .flag-bar span:first-child {
+        background: var(--blue);
+      }
+
+      .flag-bar span:last-child {
+        background: var(--yellow);
+      }
+
+      .hero {
+        align-items: center;
+        display: grid;
+        gap: 18px;
+        grid-template-columns: 112px 1fr;
+        margin-bottom: 18px;
+      }
+
+      .photo-wrap {
+        background: linear-gradient(135deg, var(--blue), var(--yellow));
+        border-radius: 999px;
+        box-shadow:
+          0 12px 28px rgba(0, 87, 183, 0.2),
+          10px 12px 26px rgba(255, 215, 0, 0.22);
+        height: 112px;
+        padding: 4px;
+        width: 112px;
+      }
+
+      .photo {
+        border: 4px solid white;
+        border-radius: 999px;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        width: 100%;
+      }
+
+      .eyebrow {
+        color: var(--blue);
+        font-size: 8.2pt;
+        font-weight: 800;
+        letter-spacing: 0.09em;
+        margin: 0 0 4px;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        font-size: 29pt;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        margin: 0;
+      }
+
+      .role {
+        color: var(--blue);
+        font-size: 12pt;
+        font-weight: 800;
+        margin: 7px 0 8px;
+      }
+
+      .contacts {
+        color: var(--muted);
+        display: grid;
+        font-size: 8.8pt;
+        gap: 6px 14px;
+        grid-template-columns: repeat(2, minmax(0, max-content));
+      }
+
+      .contact-item {
+        align-items: center;
+        display: inline-flex;
+        gap: 5px;
+        white-space: nowrap;
+      }
+
+      .contact-item svg {
+        color: var(--blue);
+        flex: 0 0 auto;
+        height: 12px;
+        stroke-width: 2.3;
+        width: 12px;
+      }
+
+      .summary {
+        background:
+          linear-gradient(135deg, rgba(0, 87, 183, 0.08), transparent 44%),
+          linear-gradient(135deg, transparent 55%, rgba(255, 215, 0, 0.2));
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        box-shadow: 0 12px 28px rgba(0, 87, 183, 0.08);
+        margin-bottom: 14px;
+        padding: 12px 14px;
+      }
+
+      .summary p {
+        margin: 0;
+      }
+
+      .layout {
+        align-items: start;
+        display: grid;
+        gap: 18px;
+        grid-template-columns: 1fr 2.08fr;
+      }
+
+      h2 {
+        align-items: center;
+        color: var(--blue);
+        display: flex;
+        font-size: 11.2pt;
+        gap: 8px;
+        letter-spacing: 0.04em;
+        margin: 0 0 9px;
+        text-transform: uppercase;
+      }
+
+      h2::after {
+        background: linear-gradient(90deg, var(--blue), var(--yellow));
+        content: "";
+        flex: 1;
+        height: 2px;
+      }
+
+      h3 {
+        font-size: 10.9pt;
+        line-height: 1.25;
+        margin: 0;
+      }
+
+      .section {
+        margin-bottom: 14px;
+      }
+
+      .card {
+        background: #fbfdff;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        break-inside: avoid;
+        margin-bottom: 9px;
+        page-break-inside: avoid;
+        padding: 10px;
+      }
+
+      .meta {
+        color: var(--muted);
+        font-size: 8.7pt;
+        font-weight: 700;
+        margin: 3px 0 6px;
+      }
+
+      ul {
+        margin: 6px 0 0;
+        padding-left: 16px;
+      }
+
+      li {
+        margin-bottom: 4px;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .chip {
+        background: var(--soft);
+        border: 1px solid #d8e8ff;
+        border-radius: 999px;
+        color: var(--blue);
+        display: inline-block;
+        font-size: 8.1pt;
+        font-weight: 750;
+        padding: 3px 7px;
+      }
+
+      .side-title {
+        color: var(--ink);
+        font-size: 9.4pt;
+        font-weight: 800;
+        margin: 0 0 5px;
+      }
+
+      .side-text {
+        color: var(--muted);
+        font-size: 8.7pt;
+        margin: 0 0 9px;
+      }
+
+      .project-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 8px;
+        color: var(--blue);
+        font-size: 8.3pt;
+        font-weight: 700;
+        margin-top: 5px;
+      }
+
+      .project-links a {
+        color: var(--blue);
+      }
+
+      .footer {
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 8pt;
+        margin-top: 10px;
+        padding-top: 7px;
+      }
+
+      @media print {
+        body {
+          background: white;
+        }
+
+        .page {
+          min-height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="flag-bar"><span></span><span></span></div>
+
+      <header class="hero">
+        <div class="photo-wrap">
+          <img class="photo" src="images/me.png" alt="Dmytro Pishchenkov" />
+        </div>
+        <div>
+          <p class="eyebrow">Platform Engineering / Cloud Ops / DevSecOps</p>
+          <h1>Dmytro Pishchenkov</h1>
+          <p class="role">
+            Software Engineer focused on Kubernetes, cloud infrastructure,
+            security, and automation
+          </p>
+          <div class="contacts">
+            <span class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path d="M20 10c0 5-8 11-8 11s-8-6-8-11a8 8 0 1 1 16 0Z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Kraków, Poland
+            </span>
+            <span class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z" />
+              </svg>
+              +48 733 415 979
+            </span>
+            <a class="contact-item" href="mailto:demetriy.78@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m3 7 9 6 9-6" />
+              </svg>
+              demetriy.78@gmail.com
+            </a>
+            <a class="contact-item" href="https://github.com/DmytroPI-dev">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.1-1.3-.4-2.6-1.3-3.5.4-1.1.4-2.4 0-3.5 0 0-1 0-3.5 1.3a12.3 12.3 0 0 0-6.4 0C6.3 2 5.3 2 5.3 2c-.4 1.1-.4 2.4 0 3.5A5 5 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.4.5-.7 1.2-.8 2-.1.7-.1 1.3-.1 1.5v4" />
+                <path d="M9 18c-4.5 2-5-2-7-2" />
+              </svg>
+              GitHub
+            </a>
+            <a class="contact-item" href="https://www.linkedin.com/in/dmytro-pishchenkov-543a52232/">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              LinkedIn
+            </a>
+            <a class="contact-item" href="https://portfolio.dmytro-dev.net">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20" />
+                <path d="M12 2a15.3 15.3 0 0 1 0 20" />
+                <path d="M12 2a15.3 15.3 0 0 0 0 20" />
+              </svg>
+              Portfolio
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <section class="summary">
+        <p>
+          Platform and Cloud Operations Engineer with enterprise experience in
+          securing, scaling, and optimizing infrastructure across Microsoft,
+          Cisco, and Splunk environments. I build reliable cloud platforms with
+          Kubernetes, Terraform, Go, Python, and a security-first mindset shaped
+          by enterprise cloud support, compliance analysis, and production
+          operations.
+        </p>
+      </section>
+
+      <div class="layout">
+        <aside>
+          <section class="section">
+            <h2>Core Stack</h2>
+            <p class="side-title">Cloud & Orchestration</p>
+            <div class="chips">
+              <span class="chip">AWS</span>
+              <span class="chip">Azure</span>
+              <span class="chip">OCI</span>
+              <span class="chip">GCP</span>
+              <span class="chip">Kubernetes</span>
+              <span class="chip">Docker</span>
+            </div>
+          </section>
+
+          <section class="section">
+            <p class="side-title">IaC & CI/CD</p>
+            <div class="chips">
+              <span class="chip">Terraform</span>
+              <span class="chip">GitHub Actions</span>
+              <span class="chip">GitOps</span>
+              <span class="chip">Argo CD</span>
+              <span class="chip">Qbec</span>
+              <span class="chip">Blue/Green</span>
+            </div>
+          </section>
+
+          <section class="section">
+            <p class="side-title">Security & DevSecOps</p>
+            <div class="chips">
+              <span class="chip">Microsoft Defender for Cloud</span>
+              <span class="chip">CSPM</span>
+              <span class="chip">CWPP</span>
+              <span class="chip">OPSEC</span>
+              <span class="chip">Zero Trust</span>
+            </div>
+          </section>
+
+          <section class="section">
+            <p class="side-title">Programming & Observability</p>
+            <div class="chips">
+              <span class="chip">Go</span>
+              <span class="chip">Python</span>
+              <span class="chip">Bash</span>
+              <span class="chip">React</span>
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">Splunk SPL</span>
+              <span class="chip">Prometheus</span>
+              <span class="chip">Firebase</span>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Education</h2>
+            <p class="side-title">Ph.D. in Public Administration</p>
+            <p class="side-text">
+              Interregional Academy of Personnel Management, 2013
+            </p>
+            <p class="side-title">Master of Law</p>
+            <p class="side-text">
+              V.I. Vernadsky Taurida National University, 2013
+            </p>
+            <p class="side-title">Bachelor of Law</p>
+            <p class="side-text">
+              V.I. Vernadsky Taurida National University, 2012
+            </p>
+          </section>
+
+          <section class="section">
+            <h2>Certifications</h2>
+            <p class="side-text">
+              Microsoft Azure Fundamentals (AZ-900).
+            </p>
+          </section>
+
+          <section class="section">
+            <h2>Languages</h2>
+            <p class="side-text">
+              Ukrainian: native; English: working proficiency; Polish: B1
+              conversational.
+            </p>
+          </section>
+        </aside>
+
+        <section>
+          <section class="section">
+            <h2>Enterprise Experience</h2>
+            <article class="card">
+              <h3>Platform Engineering & Cloud Operations - Cisco</h3>
+              <p class="meta">
+                Platform engineering, Kubernetes operators | Nov 2024 - Present
+              </p>
+              <ul>
+                <li>
+                  Transitioned to Cisco following the Splunk acquisition,
+                  continuing core platform engineering and Kubernetes operator
+                  initiatives.
+                </li>
+                <li>
+                  Extended Cisco/Splunk platform work into Kubernetes
+                  operator development, building higher-level abstractions for
+                  stateful workloads in Go.
+                </li>
+                <li>
+                  Focused on PostgreSQL Day-1 and Day-2 lifecycle automation,
+                  using AI-augmented workflows for rapid iteration, boilerplate
+                  generation, and debugging.
+                </li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Cloud Operations - Splunk</h3>
+              <p class="meta">
+                Infrastructure automation, observability | Dec 2023 - Nov 2024
+              </p>
+              <ul>
+                <li>
+                  Engineered Terraform and Python automation for a large-scale
+                  AWS RDS fleet upgrade and Intel-to-Graviton migration, a team
+                  initiative that delivered $500k+ in cost optimization.
+                </li>
+                <li>
+                  Developed SPL-based observability dashboards and used Splunk
+                  Dynamic Templates (Loki) to track infrastructure state and
+                  lifecycle events across the fleet.
+                </li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Microsoft Defender for Cloud Support - LTIMindtree</h3>
+              <p class="meta">
+                Cloud security, DevSecOps support | Apr 2023 - Nov 2023
+              </p>
+              <ul>
+                <li>
+                  Provided advanced support for enterprise cloud environments,
+                  focusing on Cloud Security Posture Management, workload
+                  protection, and complex cloud security incident resolution.
+                </li>
+                <li>
+                  Troubleshot security configuration, vulnerability assessment,
+                  and operational reliability issues in production
+                  environments.
+                </li>
+                <li>
+                  Translated complex security findings into actionable
+                  engineering guidance for customer and internal stakeholders.
+                </li>
+              </ul>
+            </article>
+
+          </section>
+        </section>
+      </div>
+
+      <section class="section">
+        <h2>Earlier Experience</h2>
+        <article class="card">
+          <h3>Legal Adviser & Compliance Specialist</h3>
+          <p class="meta">Private practice / Medpos Ltd. | 2013 - 2022</p>
+          <ul>
+            <li>
+              Managed legal analysis, contracts, documentation, and regulatory
+              compliance work, strengthening the audit-oriented mindset now
+              applied to DevSecOps and platform engineering.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section">
+        <h2>Selected Projects</h2>
+        <article class="card">
+          <h3>Splunk Operator: PostgreSQL Platform Controllers</h3>
+          <p class="meta">
+            Go, Kubernetes, Operators, PostgreSQL, CloudNativePG,
+            AI-Augmented Development
+          </p>
+          <p>
+            Engineered core APIs, including PostgresCluster, PostgresDatabase,
+            and class-based provisioning primitives, to establish a higher-level
+            PostgreSQL platform layer for Splunk on Kubernetes. Added
+            CNPG-backed reconciliation and Day-1/Day-2 lifecycle management for
+            enterprise stateful workloads.
+          </p>
+          <p class="project-links">
+            <a href="https://github.com/splunk/splunk-operator/tree/feature/database-controllers">Repository</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Serverless Cloud-Native Web Application</h3>
+          <p class="meta">Go, GCP Cloud Run, Docker, Firebase, React</p>
+          <p>
+            Architected and deployed a multilingual web application with a
+            Go-based REST API and React frontend. Containerized the backend for
+            Google Cloud Run, enabling scale-to-zero delivery, and integrated
+            Firebase for NoSQL-backed state and localization support.
+          </p>
+          <p class="project-links">
+            <a href="https://hgame.i-dmytro.org/">Live demo</a>
+            <span>|</span>
+            <a href="https://github.com/DmytroPI-dev/go-hangman">Repository</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Secure Communication Infrastructure</h3>
+          <p class="meta">
+            Go, WebSockets, WebRTC, TURN, AES-GCM, OCI, Terraform
+          </p>
+          <p>
+            Architected a secure real-time communication platform deployed on
+            OCI and provisioned entirely with Terraform. Built a hardened
+            deployment path with custom coturn configuration, DTLS fingerprint
+            verification, ephemeral state cleanup, and AES-GCM payload
+            encryption.
+          </p>
+          <p class="project-links">
+            <a href="https://messenger.dmytro-dev.net">Live demo</a>
+            <span>|</span>
+            <a href="https://github.com/DmytroPI-dev/secure-messenger">Repository</a>
+          </p>
+        </article>
+      </section>
+
+    </main>
+  </body>
+</html>

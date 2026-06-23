@@ -35,7 +35,6 @@ import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import resumePdf from "../assets/curriculum.pdf";
-import resumePlPdf from "../assets/curriculum_pl.pdf";
 import profilePhoto from "../assets/images/me.png";
 import { languageThemes, languages, socialLinks } from "./data/profile.js";
 
@@ -105,7 +104,7 @@ function App() {
   const skillGroups = t("skills.groups", { returnObjects: true });
   const experienceItems = t("experience.items", { returnObjects: true });
   const projects = t("projects.items", { returnObjects: true });
-  const resumeHref = currentLanguage === "pl" ? resumePlPdf : resumePdf;
+  const resumeHref = resumePdf;
 
   const accentStripe = useMemo(
     () =>
@@ -114,6 +113,27 @@ function App() {
         : `linear-gradient(90deg, ${palette.primary}, ${palette.secondary})`,
     [currentLanguage, palette],
   );
+  const heroButtonStyles = {
+    bg: palette.buttonGradient,
+    border: "1px solid",
+    borderColor: palette.border,
+    boxShadow: `${palette.buttonGlow || palette.glow}, inset 0 1px 0 rgba(255, 255, 255, 0.42)`,
+    color: currentLanguage === "pl" ? palette.text : "white",
+    fontWeight: "700",
+    letterSpacing: "0.04em",
+    textShadow: currentLanguage === "pl" ? "none" : "0 1px 2px rgba(0, 0, 0, 0.34)",
+    transition: "transform 160ms ease, box-shadow 160ms ease, filter 160ms ease",
+    _hover: {
+      boxShadow: `${palette.buttonGlow || palette.glow}, 0 22px 44px rgba(15, 23, 42, 0.16)`,
+      filter: "saturate(1.08)",
+      textDecoration: "none",
+      transform: "translateY(-2px)",
+    },
+    _active: {
+      boxShadow: palette.buttonGlow || palette.glow,
+      transform: "translateY(0)",
+    },
+  };
 
   const changeLanguage = (languageCode) => {
     window.localStorage.setItem("portfolioLanguage", languageCode);
@@ -256,22 +276,30 @@ function App() {
                 <Flex gap="3" wrap="wrap">
                   <Button
                     as="a"
-                    bg={palette.buttonGradient}
-                    boxShadow={palette.glow}
-                    color={currentLanguage === "pl" ? palette.text : "white"}
                     href={resumeHref}
-                    letterSpacing="0.04em"
                     target="_blank"
                     rel="noopener noreferrer"
-                    textShadow={currentLanguage === "pl" ? "none" : "0 1px 2px rgba(0, 0, 0, 0.32)"}
+                    {...heroButtonStyles}
                   >
                     {t("hero.resume")}
                   </Button>
-                  <Button as="a" href={socialLinks.github} target="_blank" rel="noopener noreferrer" variant="outline">
+                  <Button
+                    as="a"
+                    href={socialLinks.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    {...heroButtonStyles}
+                  >
                     <Github size={18} />
                     {t("hero.github")}
                   </Button>
-                  <Button as="a" href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" variant="outline">
+                  <Button
+                    as="a"
+                    href={socialLinks.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    {...heroButtonStyles}
+                  >
                     <Linkedin size={18} />
                     {t("hero.linkedin")}
                   </Button>
@@ -350,7 +378,7 @@ function App() {
                       const ExperienceIcon = experienceIcons[index] || Briefcase;
                       return (
                         <Stack
-                          bg="white"
+                        bg="white"
                           border="1px solid"
                           borderColor={palette.border}
                           boxShadow="0 16px 40px rgba(31, 41, 55, 0.08)"
@@ -537,7 +565,7 @@ function App() {
                       <Input aria-label={t("contact.emailPlaceholder")} name="email" placeholder={t("contact.emailPlaceholder")} required type="email" />
                       <Input aria-label={t("contact.subject")} name="subject" placeholder={t("contact.subject")} required />
                       <Textarea aria-label={t("contact.message")} minH="140px" name="message" placeholder={t("contact.message")} required />
-                      <Button alignSelf="flex-start" bg={palette.primary} color="white" type="submit">
+                      <Button alignSelf="flex-start" type="submit" {...heroButtonStyles}>
                         {t("contact.send")}
                       </Button>
                     </Stack>
