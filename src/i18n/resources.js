@@ -18,7 +18,7 @@ export const resources = {
         subtitle:
           "Software Engineer focused on Kubernetes, cloud infrastructure, security, and automation.",
         body: "I build and operate reliable cloud platforms with Terraform, Kubernetes, Go, Python, and a security-first mindset shaped by enterprise support and compliance experience.",
-        resume: "Resume",
+        resume: "CV",
         github: "GitHub",
         linkedin: "LinkedIn",
       },
@@ -180,7 +180,7 @@ export const resources = {
         subtitle:
           "Software Engineer з фокусом на Kubernetes, хмарну інфраструктуру, безпеку та автоматизацію.",
         body: "Я створюю та підтримую надійні cloud-платформи з Terraform, Kubernetes, Go і Python, використовуючи security-first підхід, сформований досвідом enterprise support та compliance.",
-        resume: "Резюме",
+        resume: "CV",
         github: "GitHub",
         linkedin: "LinkedIn",
       },

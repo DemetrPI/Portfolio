@@ -8,12 +8,14 @@ import {
   Heading,
   HoverCard,
   HStack,
+  IconButton,
   Image,
   Input,
   SimpleGrid,
   Stack,
   Text,
   Textarea,
+  Theme,
 } from "@chakra-ui/react";
 import {
   Activity,
@@ -26,12 +28,14 @@ import {
   Linkedin,
   Mail,
   Menu,
+  Moon,
   RadioTower,
   ShieldCheck,
+  Sun,
   TerminalSquare,
   X,
 } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import resumePdf from "../assets/curriculum.pdf";
@@ -41,6 +45,50 @@ import { languageThemes, languages, socialLinks } from "./data/profile.js";
 const navItems = ["about", "experience", "skills", "projects", "contact"];
 const projectIcons = [ShieldCheck, Cloud, TerminalSquare];
 const experienceIcons = [Briefcase, Headphones, Activity];
+
+function createAppearancePalette(basePalette, isDark) {
+  if (!isDark) {
+    return {
+      ...basePalette,
+      appBg: "#f8fafc",
+      bodyText: "#43516a",
+      cardShadow: "0 16px 40px rgba(31, 41, 55, 0.08)",
+      elevatedBg: "#ffffff",
+      footerText: "#64748b",
+      headerBg: "rgba(255, 255, 255, 0.86)",
+      hoverCardBg: "#ffffff",
+      iconPanelShadow: "0 10px 22px rgba(31, 41, 55, 0.12)",
+      inputBg: "rgba(255, 255, 255, 0.9)",
+      locationText: "#64748b",
+      sectionNote: "#64748b",
+    };
+  }
+
+  return {
+    ...basePalette,
+    appBg: "#08111e",
+    bodyText: "#b6c3d9",
+    cardGradient:
+      "linear-gradient(145deg, rgba(7, 18, 33, 0.94), rgba(13, 25, 43, 0.96) 46%, rgba(255, 255, 255, 0.04))",
+    cardShadow:
+      "0 18px 46px rgba(2, 6, 23, 0.52), 0 10px 26px rgba(15, 23, 42, 0.36)",
+    elevatedBg: "rgba(10, 19, 34, 0.92)",
+    footerText: "#8ea2c5",
+    headerBg: "rgba(6, 14, 26, 0.82)",
+    heroGradient:
+      "linear-gradient(135deg, rgba(7, 18, 33, 0.98), rgba(17, 31, 53, 0.96) 52%, rgba(255, 255, 255, 0.04))",
+    hoverCardBg: "rgba(8, 18, 32, 0.98)",
+    iconPanelShadow:
+      "0 12px 28px rgba(2, 6, 23, 0.44), 0 0 0 1px rgba(255, 255, 255, 0.04)",
+    inputBg: "rgba(7, 16, 30, 0.9)",
+    locationText: "#8ea2c5",
+    muted: "rgba(255, 255, 255, 0.08)",
+    sectionNote: "#8ea2c5",
+    surface: "#0b1627",
+    text: "#edf4ff",
+    border: "rgba(152, 177, 214, 0.22)",
+  };
+}
 
 function SectionHeading({ eyebrow, title, palette }) {
   return (
@@ -67,10 +115,10 @@ function ProjectActionHoverCard({ children, label, note, palette, url }) {
       <HoverCard.Trigger asChild>{children}</HoverCard.Trigger>
       <HoverCard.Positioner>
         <HoverCard.Content
-          bg="white"
+          bg={palette.hoverCardBg}
           border="1px solid"
           borderColor={palette.border}
-          boxShadow="0 18px 44px rgba(15, 23, 42, 0.16)"
+          boxShadow={palette.cardShadow}
           maxW="280px"
           p="4"
           rounded="xl"
@@ -81,7 +129,7 @@ function ProjectActionHoverCard({ children, label, note, palette, url }) {
               {label}
             </Text>
             {note ? (
-              <Text color="#64748b" fontSize="xs" lineHeight="1.5">
+              <Text color={palette.footerText} fontSize="xs" lineHeight="1.5">
                 {note}
               </Text>
             ) : null}
@@ -98,8 +146,19 @@ function ProjectActionHoverCard({ children, label, note, palette, url }) {
 function App() {
   const { i18n, t } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [appearance, setAppearance] = useState(() => {
+    if (typeof window === "undefined") return "light";
+
+    const storedAppearance = window.localStorage.getItem("portfolioAppearance");
+    if (storedAppearance === "light" || storedAppearance === "dark") return storedAppearance;
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  });
   const currentLanguage = i18n.language?.slice(0, 2) || "en";
-  const palette = languageThemes[currentLanguage] || languageThemes.en;
+  const palette = createAppearancePalette(
+    languageThemes[currentLanguage] || languageThemes.en,
+    appearance === "dark",
+  );
   const nav = t("nav", { returnObjects: true });
   const skillGroups = t("skills.groups", { returnObjects: true });
   const experienceItems = t("experience.items", { returnObjects: true });
@@ -134,6 +193,22 @@ function App() {
       transform: "translateY(0)",
     },
   };
+  const formFieldStyles = {
+    bg: palette.inputBg,
+    borderColor: palette.border,
+    color: palette.text,
+    _placeholder: {
+      color: palette.footerText,
+    },
+    _focusVisible: {
+      borderColor: palette.primary,
+      boxShadow: `0 0 0 1px ${palette.primary}`,
+    },
+  };
+
+  useEffect(() => {
+    window.localStorage.setItem("portfolioAppearance", appearance);
+  }, [appearance]);
 
   const changeLanguage = (languageCode) => {
     window.localStorage.setItem("portfolioLanguage", languageCode);
@@ -141,8 +216,15 @@ function App() {
     setIsMobileMenuOpen(false);
   };
 
+  const toggleAppearance = () => {
+    setAppearance((currentAppearance) =>
+      currentAppearance === "dark" ? "light" : "dark",
+    );
+  };
+
   return (
-    <Box bg="#f8fafc" color={palette.text} minH="100vh">
+    <Theme appearance={appearance}>
+      <Box bg={palette.appBg} color={palette.text} minH="100vh">
       <Box
         aria-hidden="true"
         bg={palette.drawerGradient}
@@ -159,7 +241,7 @@ function App() {
       <Box bg={accentStripe} h="5px" />
       <Box
         as="header"
-        bg="rgba(255, 255, 255, 0.86)"
+        bg={palette.headerBg}
         borderBottom="1px solid"
         borderColor={palette.border}
         position="sticky"
@@ -207,6 +289,20 @@ function App() {
                   );
                 })}
               </HStack>
+              <IconButton
+                aria-label={appearance === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+                bg={palette.cardGradient}
+                border="1px solid"
+                borderColor={palette.border}
+                boxShadow={palette.cardShadow}
+                color={palette.primary}
+                onClick={toggleAppearance}
+                size="sm"
+                variant="ghost"
+                _hover={{ bg: palette.muted, transform: "translateY(-1px)" }}
+              >
+                {appearance === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+              </IconButton>
               <Button
                 aria-controls="mobile-navigation"
                 aria-expanded={isMobileMenuOpen}
@@ -269,7 +365,7 @@ function App() {
                   <Text color={palette.primary} fontSize={{ base: "xl", md: "2xl" }} fontWeight="700">
                     {t("hero.subtitle")}
                   </Text>
-                  <Text color="#43516a" fontSize={{ base: "md", md: "lg" }} lineHeight="1.75" maxW="720px">
+                  <Text color={palette.bodyText} fontSize={{ base: "md", md: "lg" }} lineHeight="1.75" maxW="720px">
                     {t("hero.body")}
                   </Text>
                 </Stack>
@@ -317,7 +413,7 @@ function App() {
               >
                 <Image alt="Dmytro Pishchenkov" aspectRatio="1" objectFit="cover" src={profilePhoto} w="100%" />
                 <Box p="5">
-                  <Text color="#64748b" fontSize="sm">
+                  <Text color={palette.locationText} fontSize="sm">
                     Krakow, Poland
                   </Text>
                 </Box>
@@ -332,7 +428,7 @@ function App() {
               <Grid gap="8" templateColumns={{ base: "1fr", lg: "0.9fr 1.1fr" }}>
                 <SectionHeading eyebrow={t("about.eyebrow")} palette={palette} title={t("about.title")} />
                 <Stack gap="6">
-                  <Text color="#43516a" fontSize={{ base: "md", md: "lg" }} lineHeight="1.8">
+                  <Text color={palette.bodyText} fontSize={{ base: "md", md: "lg" }} lineHeight="1.8">
                     {t("about.body")}
                   </Text>
                   <SimpleGrid columns={{ base: 1, md: 3 }} gap="4">
@@ -341,7 +437,7 @@ function App() {
                         bg={palette.cardGradient}
                         border="1px solid"
                         borderColor={palette.border}
-                        boxShadow="0 16px 40px rgba(31, 41, 55, 0.08)"
+                        boxShadow={palette.cardShadow}
                         key={highlight}
                         p="5"
                         rounded="xl"
@@ -369,7 +465,7 @@ function App() {
                     p={{ base: "6", md: "8" }}
                     rounded="2xl"
                   >
-                    <Text color="#43516a" fontSize={{ base: "md", md: "lg" }} lineHeight="1.8">
+                    <Text color={palette.bodyText} fontSize={{ base: "md", md: "lg" }} lineHeight="1.8">
                       {t("experience.body")}
                     </Text>
                   </Box>
@@ -378,10 +474,10 @@ function App() {
                       const ExperienceIcon = experienceIcons[index] || Briefcase;
                       return (
                         <Stack
-                        bg="white"
+                          bg={palette.elevatedBg}
                           border="1px solid"
                           borderColor={palette.border}
-                          boxShadow="0 16px 40px rgba(31, 41, 55, 0.08)"
+                          boxShadow={palette.cardShadow}
                           gap="4"
                           key={item.title}
                           p="5"
@@ -389,7 +485,7 @@ function App() {
                         >
                           <Box
                             bg={palette.buttonGradient}
-                            boxShadow="0 10px 22px rgba(31, 41, 55, 0.12)"
+                            boxShadow={palette.iconPanelShadow}
                             color={currentLanguage === "pl" ? palette.text : "white"}
                             p="3"
                             rounded="lg"
@@ -401,7 +497,7 @@ function App() {
                             <Heading fontSize="md" lineHeight="1.25">
                               {item.title}
                             </Heading>
-                            <Text color="#43516a" fontSize="sm" lineHeight="1.65">
+                            <Text color={palette.bodyText} fontSize="sm" lineHeight="1.65">
                               {item.description}
                             </Text>
                           </Stack>
@@ -422,7 +518,7 @@ function App() {
                       bg={palette.cardGradient}
                       border="1px solid"
                       borderColor={palette.border}
-                      boxShadow="0 16px 40px rgba(31, 41, 55, 0.08)"
+                      boxShadow={palette.cardShadow}
                       key={group.title}
                       p="6"
                       rounded="2xl"
@@ -447,7 +543,7 @@ function App() {
             <Box as="section" id="projects" scrollMarginTop="96px">
               <Stack gap="8">
                 <SectionHeading eyebrow={t("projects.eyebrow")} palette={palette} title={t("projects.title")} />
-                <Text color="#64748b" maxW="720px">
+                <Text color={palette.sectionNote} maxW="720px">
                   {t("projects.note")}
                 </Text>
                 <SimpleGrid columns={{ base: 1, lg: 3 }} gap="5">
@@ -461,7 +557,7 @@ function App() {
                         bg={palette.cardGradient}
                         border="1px solid"
                         borderColor={palette.border}
-                        boxShadow="0 16px 40px rgba(31, 41, 55, 0.08)"
+                        boxShadow={palette.cardShadow}
                         gap="5"
                         key={project.title}
                         p="6"
@@ -477,7 +573,7 @@ function App() {
                           <Text color={palette.primary} fontSize="sm" fontWeight="700">
                             {project.focus}
                           </Text>
-                          <Text color="#43516a" lineHeight="1.7">
+                          <Text color={palette.bodyText} lineHeight="1.7">
                             {project.description}
                           </Text>
                         </Stack>
@@ -541,7 +637,7 @@ function App() {
               >
                 <Stack gap="6">
                   <SectionHeading eyebrow={t("contact.eyebrow")} palette={palette} title={t("contact.title")} />
-                  <Text color="#43516a" lineHeight="1.7">
+                  <Text color={palette.bodyText} lineHeight="1.7">
                     {t("contact.body")}
                   </Text>
                   <Stack gap="3">
@@ -561,10 +657,10 @@ function App() {
                   </Heading>
                   <Box as="form" action="https://formspree.io/f/xeqwajpz" method="POST">
                     <Stack gap="4">
-                      <Input aria-label={t("contact.name")} name="name" placeholder={t("contact.name")} required />
-                      <Input aria-label={t("contact.emailPlaceholder")} name="email" placeholder={t("contact.emailPlaceholder")} required type="email" />
-                      <Input aria-label={t("contact.subject")} name="subject" placeholder={t("contact.subject")} required />
-                      <Textarea aria-label={t("contact.message")} minH="140px" name="message" placeholder={t("contact.message")} required />
+                      <Input aria-label={t("contact.name")} name="name" placeholder={t("contact.name")} required {...formFieldStyles} />
+                      <Input aria-label={t("contact.emailPlaceholder")} name="email" placeholder={t("contact.emailPlaceholder")} required type="email" {...formFieldStyles} />
+                      <Input aria-label={t("contact.subject")} name="subject" placeholder={t("contact.subject")} required {...formFieldStyles} />
+                      <Textarea aria-label={t("contact.message")} minH="140px" name="message" placeholder={t("contact.message")} required {...formFieldStyles} />
                       <Button alignSelf="flex-start" type="submit" {...heroButtonStyles}>
                         {t("contact.send")}
                       </Button>
@@ -579,12 +675,13 @@ function App() {
 
       <Box as="footer" borderTop="1px solid" borderColor={palette.border} py="6">
         <Container maxW="1180px">
-          <Text color="#64748b" fontSize="sm">
+          <Text color={palette.footerText} fontSize="sm">
             {t("footer")}
           </Text>
         </Container>
       </Box>
-    </Box>
+      </Box>
+    </Theme>
   );
 }
 
