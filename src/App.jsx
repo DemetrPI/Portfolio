@@ -36,7 +36,7 @@ import {
   X,
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 import resumePdf from "../assets/curriculum.pdf";
 import profilePhoto from "../assets/images/me.png";
@@ -676,7 +676,21 @@ function App() {
       <Box as="footer" borderTop="1px solid" borderColor={palette.border} py="6">
         <Container maxW="1180px">
           <Text color={palette.footerText} fontSize="sm">
-            {t("footer")}
+            <Trans
+              i18nKey="footer"
+              components={{
+                name: (
+                  <a
+                    href="https://github.com/DemetrPI/Portfolio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "inherit", textDecoration: "underline" }}
+                  >
+                    {t("footerName")}
+                  </a>
+                ),
+              }}
+            />
           </Text>
         </Container>
       </Box>
