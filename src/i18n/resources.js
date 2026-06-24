@@ -156,8 +156,9 @@ export const resources = {
         message: "Message",
         send: "Send",
       },
+      footerName: "Dmytro Pishchenkov",
       footer:
-        "© Dmytro Pishchenkov 2026 | Built with React, deployed via CI/CD, and hosted on Microsoft Azure.",
+        "© <name /> 2026 | Built with React, deployed via CI/CD, and hosted on Microsoft Azure.",
       languageLabel: "Select language",
     },
   },
@@ -318,8 +319,9 @@ export const resources = {
         message: "Повідомлення",
         send: "Надіслати",
       },
+      footerName: "Дмитро Піщенков",
       footer:
-        "© Дмитро Піщенков 2026 | Побудовано на React, розгорнуто через CI/CD та розміщено на Microsoft Azure.",
+        "© <name /> 2026 | Побудовано на React, розгорнуто через CI/CD та розміщено на Microsoft Azure.",
       languageLabel: "Оберіть мову",
     },
   },
@@ -481,8 +483,9 @@ export const resources = {
         message: "Wiadomość",
         send: "Wyślij",
       },
+      footerName: "Dmytro Pishchenkov",
       footer:
-        "© Dmytro Pishchenkov 2026 | Zbudowane w React, wdrożone przez CI/CD i hostowane na Microsoft Azure.",
+        "© <name /> 2026 | Zbudowane w React, wdrożone przez CI/CD i hostowane na Microsoft Azure.",
       languageLabel: "Wybierz język",
     },
   },
