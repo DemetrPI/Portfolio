@@ -1,93 +1,68 @@
-# Dmytro Pishchenkov Portfolio
+# Dmytro Pishchenkov | Portfolio
 
-Modern portfolio landing page for Platform Engineering, Cloud Operations, and DevSecOps work.
+Welcome to the source code for my personal landing page! I use this space as my digital business card to showcase my work across Platform Engineering, Cloud Operations, and DevSecOps.
 
-## Stack
+## What's Baked In
 
-- Vite
-- React
-- Chakra UI
-- i18next / react-i18next
-- Lucide React icons
+I wanted the site to be fast, accessible, and easy to navigate. Here is what it currently features:
 
-## Current Direction
+* **Trilingual Support:** English, Ukrainian, and Polish (handled via `react-i18next`).
+* **Theming:** Language-specific visual themes, plus the mandatory Light/Dark mode toggle.
+* **The Goods:** Easy access to my downloadable CV, live project demos, and repository links.
+* **The Highlights:** A breakdown of my core work, emphasizing Kubernetes automation, IaC (Terraform), Go/Python/Bash scripting, and observability.
 
-The portfolio is being refactored from an older static HTML/CSS/JavaScript site into a React application. The new positioning focuses on:
+### Featured Projects
 
-- Kubernetes and cloud platform engineering
-- Infrastructure as Code with Terraform
-- Cloud security and DevSecOps
-- Automation with Go, Python, and Bash
-- Observability and enterprise cloud operations
+If you are poking around to see what I build, the portfolio specifically highlights:
 
-## Languages And Themes
+* **Splunk Operator:** PostgreSQL Platform Controllers
+* **Serverless Cloud-Native Web Application**
+* **Secure Communication Infrastructure**
 
-The site supports three languages:
+## Under the Hood (The Stack)
 
-- English
-- Ukrainian
-- Polish
+While I spend most of my day wrestling with Kubernetes and cloud infrastructure, I built this frontend using:
 
-Language selection is handled by `i18next`. The visual palette changes with the selected language:
+* **Vite** (for that sweet, lightning-fast build time)
+* **React**
+* **Chakra UI** (for clean, accessible component styling)
 
-- English: blue, red, and white
-- Ukrainian: blue and yellow
-- Polish: red and white
+## Spin It Up Locally
 
-## Development
+Want to run it on your machine? It's pretty straightforward.
 
-Install dependencies:
+**1. Install dependencies:**
 
 ```bash
 npm install
+
 ```
 
-Start the dev server:
+**2. Start the dev server:**
 
 ```bash
 npm run dev
+
 ```
 
-Build for production:
+**3. Build for production:**
 
 ```bash
 npm run build
+
 ```
 
-Preview the production build:
+**4. Preview the production build:**
 
 ```bash
 npm run preview
+
 ```
 
-## Deployment
+## How It Ships (Deployment)
 
-The selected hosting target is Azure Static Web Apps.
+This site is deployed and hosted using **Azure Static Web Apps**.
 
-Recommended Azure settings:
-
-- App location: `/`
-- API location: empty
-- Output location: `dist`
-- Build command: `npm run build`
-
-The repository includes:
-
-- `.github/workflows/azure-static-web-apps.yml` for GitHub Actions deployment
-- `public/staticwebapp.config.json` for SPA fallback and basic security headers
-
-Create a GitHub secret named `AZURE_STATIC_WEB_APPS_API_TOKEN` with the deployment token from Azure Static Web Apps. If Azure generates a different secret name, either rename the secret or update the workflow.
-
-## Project Content
-
-The current project cards are placeholders for:
-
-- Secure OPSEC Communication Protocol
-- Serverless Multi-language Web Application
-- Multi-Cloud IaC & Automated Deployment
-
-Final live demo and repository links will be added after the first refactor pass is reviewed.
-
-## Notes
-
-The previous static assets and helper scripts are still present during the transition so the old implementation can be referenced if needed. They can be removed once the React version is accepted.
+* **CI/CD Pipeline:** Fully automated via GitHub Actions (you can check out the workflow at `.github/workflows/azure-static-web-apps-ashy-bay-06902e503.yml`).
+* **Workflow Target:** Pushes to the `master` branch trigger deployments from the `/` app location, outputting to the `dist` directory (API location is currently empty).
+* **Routing:** SPA routing fallback and custom headers are managed cleanly via `public/staticwebapp.config.json`.
