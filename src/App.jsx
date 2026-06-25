@@ -51,7 +51,10 @@ function createAppearancePalette(basePalette, isDark) {
     return {
       ...basePalette,
       appBg: "#f8fafc",
+      accentText: basePalette.accentText || basePalette.primary,
       bodyText: "#43516a",
+      buttonText: basePalette.buttonText || "#ffffff",
+      buttonTextShadow: basePalette.buttonText === "#1f1720" ? "none" : "0 1px 2px rgba(0, 0, 0, 0.34)",
       cardShadow: "0 16px 40px rgba(31, 41, 55, 0.08)",
       elevatedBg: "#ffffff",
       footerText: "#64748b",
@@ -67,7 +70,11 @@ function createAppearancePalette(basePalette, isDark) {
   return {
     ...basePalette,
     appBg: "#08111e",
+    accentText: basePalette.darkAccentText || "#a8c7ff",
     bodyText: "#b6c3d9",
+    buttonGradient: basePalette.darkButtonGradient || basePalette.buttonGradient,
+    buttonText: basePalette.darkButtonText || basePalette.buttonText || "#ffffff",
+    buttonTextShadow: basePalette.darkButtonTextShadow || "0 1px 2px rgba(0, 0, 0, 0.34)",
     cardGradient:
       "linear-gradient(145deg, rgba(7, 18, 33, 0.94), rgba(13, 25, 43, 0.96) 46%, rgba(255, 255, 255, 0.04))",
     cardShadow:
@@ -94,7 +101,7 @@ function SectionHeading({ eyebrow, title, palette }) {
   return (
     <Stack gap="2" maxW="760px">
       <Text
-        color={palette.primary}
+        color={palette.accentText}
         fontSize="sm"
         fontWeight="700"
         letterSpacing="0.08em"
@@ -133,7 +140,7 @@ function ProjectActionHoverCard({ children, label, note, palette, url }) {
                 {note}
               </Text>
             ) : null}
-            <Text color={palette.primary} fontSize="xs" fontWeight="600" lineHeight="1.5">
+            <Text color={palette.accentText} fontSize="xs" fontWeight="600" lineHeight="1.5">
               {url}
             </Text>
           </Stack>
@@ -177,10 +184,10 @@ function App() {
     border: "1px solid",
     borderColor: palette.border,
     boxShadow: `${palette.buttonGlow || palette.glow}, inset 0 1px 0 rgba(255, 255, 255, 0.42)`,
-    color: currentLanguage === "pl" ? palette.text : "white",
+    color: palette.buttonText,
     fontWeight: "700",
     letterSpacing: "0.04em",
-    textShadow: currentLanguage === "pl" ? "none" : "0 1px 2px rgba(0, 0, 0, 0.34)",
+    textShadow: palette.buttonTextShadow,
     transition: "transform 160ms ease, box-shadow 160ms ease, filter 160ms ease",
     _hover: {
       boxShadow: `${palette.buttonGlow || palette.glow}, 0 22px 44px rgba(15, 23, 42, 0.16)`,
@@ -295,7 +302,7 @@ function App() {
                 border="1px solid"
                 borderColor={palette.border}
                 boxShadow={palette.cardShadow}
-                color={palette.primary}
+                color={palette.accentText}
                 onClick={toggleAppearance}
                 size="sm"
                 variant="ghost"
@@ -352,7 +359,7 @@ function App() {
                   <Badge
                     alignSelf="flex-start"
                     bg={palette.muted}
-                    color={palette.primary}
+                    color={palette.accentText}
                     px="3"
                     py="1"
                     rounded="full"
@@ -362,7 +369,7 @@ function App() {
                   <Heading fontSize={{ base: "4xl", md: "6xl" }} lineHeight="0.98">
                     {t("hero.title")}
                   </Heading>
-                  <Text color={palette.primary} fontSize={{ base: "xl", md: "2xl" }} fontWeight="700">
+                  <Text color={palette.accentText} fontSize={{ base: "xl", md: "2xl" }} fontWeight="700">
                     {t("hero.subtitle")}
                   </Text>
                   <Text color={palette.bodyText} fontSize={{ base: "md", md: "lg" }} lineHeight="1.75" maxW="720px">
@@ -442,7 +449,7 @@ function App() {
                         p="5"
                         rounded="xl"
                       >
-                        <ShieldCheck color={palette.primary} size={22} />
+                        <ShieldCheck color={palette.accentText} size={22} />
                         <Text fontSize="sm" fontWeight="700" lineHeight="1.55" mt="4">
                           {highlight}
                         </Text>
@@ -486,7 +493,7 @@ function App() {
                           <Box
                             bg={palette.buttonGradient}
                             boxShadow={palette.iconPanelShadow}
-                            color={currentLanguage === "pl" ? palette.text : "white"}
+                            color={palette.buttonText}
                             p="3"
                             rounded="lg"
                             w="fit-content"
@@ -524,12 +531,12 @@ function App() {
                       rounded="2xl"
                     >
                       <HStack gap="3" mb="5">
-                        <Code2 color={palette.primary} size={22} />
+                        <Code2 color={palette.accentText} size={22} />
                         <Heading fontSize="lg">{group.title}</Heading>
                       </HStack>
                       <Flex gap="2" wrap="wrap">
                         {group.items.map((item) => (
-                          <Badge bg={palette.muted} color={palette.primary} key={item} px="3" py="1" rounded="full">
+                          <Badge bg={palette.muted} color={palette.accentText} key={item} px="3" py="1" rounded="full">
                             {item}
                           </Badge>
                         ))}
@@ -563,14 +570,14 @@ function App() {
                         p="6"
                         rounded="2xl"
                       >
-                        <Box bg={palette.muted} color={palette.primary} p="3" rounded="xl" w="fit-content">
+                        <Box bg={palette.muted} color={palette.accentText} p="3" rounded="xl" w="fit-content">
                           <ProjectIcon size={24} />
                         </Box>
                         <Stack gap="2">
                           <Heading fontSize="xl" lineHeight="1.2">
                             {project.title}
                           </Heading>
-                          <Text color={palette.primary} fontSize="sm" fontWeight="700">
+                          <Text color={palette.accentText} fontSize="sm" fontWeight="700">
                             {project.focus}
                           </Text>
                           <Text color={palette.bodyText} lineHeight="1.7">
@@ -606,7 +613,7 @@ function App() {
                               <Button
                                 as="a"
                                 bg={palette.buttonGradient}
-                                color={currentLanguage === "pl" ? palette.text : "white"}
+                                color={palette.buttonText}
                                 href={project.repoUrl}
                                 rel={hasRepoUrl ? "noopener noreferrer" : undefined}
                                 size="sm"

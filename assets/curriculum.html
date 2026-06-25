@@ -127,6 +127,10 @@
         white-space: nowrap;
       }
 
+      .contact-item.full-link {
+        grid-column: 1 / -1;
+      }
+
       .contact-item svg {
         color: var(--blue);
         flex: 0 0 auto;
@@ -258,9 +262,17 @@
       .footer {
         border-top: 1px solid var(--line);
         color: var(--muted);
-        font-size: 8pt;
+        font-size: 6.4pt;
+        line-height: 1.3;
         margin-top: 10px;
-        padding-top: 7px;
+        padding-top: 6px;
+      }
+
+      .footer-title {
+        color: var(--ink);
+        display: block;
+        font-weight: 800;
+        margin-bottom: 2px;
       }
 
       @media print {
@@ -297,12 +309,6 @@
               </svg>
               Kraków, Poland
             </span>
-            <span class="contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z" />
-              </svg>
-              +48 733 415 979
-            </span>
             <a class="contact-item" href="mailto:demetriy.78@gmail.com">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
                 <rect x="3" y="5" width="18" height="14" rx="2" />
@@ -310,29 +316,29 @@
               </svg>
               demetriy.78@gmail.com
             </a>
-            <a class="contact-item" href="https://github.com/DmytroPI-dev">
+            <a class="contact-item full-link" href="https://github.com/DmytroPI-dev">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
                 <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.1-1.3-.4-2.6-1.3-3.5.4-1.1.4-2.4 0-3.5 0 0-1 0-3.5 1.3a12.3 12.3 0 0 0-6.4 0C6.3 2 5.3 2 5.3 2c-.4 1.1-.4 2.4 0 3.5A5 5 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.4.5-.7 1.2-.8 2-.1.7-.1 1.3-.1 1.5v4" />
                 <path d="M9 18c-4.5 2-5-2-7-2" />
               </svg>
-              GitHub
+              https://github.com/DmytroPI-dev
             </a>
-            <a class="contact-item" href="https://www.linkedin.com/in/dmytro-pishchenkov-543a52232/">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z" />
-                <rect x="2" y="9" width="4" height="12" />
-                <circle cx="4" cy="4" r="2" />
-              </svg>
-              LinkedIn
-            </a>
-            <a class="contact-item" href="https://portfolio.dmytro-dev.net">
+            <a class="contact-item full-link" href="https://portfolio.dmytro-dev.net">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
                 <circle cx="12" cy="12" r="10" />
                 <path d="M2 12h20" />
                 <path d="M12 2a15.3 15.3 0 0 1 0 20" />
                 <path d="M12 2a15.3 15.3 0 0 0 0 20" />
               </svg>
-              Portfolio
+              https://portfolio.dmytro-dev.net
+            </a>
+            <a class="contact-item full-link" href="https://www.linkedin.com/in/dmytro-pishchenkov-543a52232/">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              https://www.linkedin.com/in/dmytro-pishchenkov-543a52232/
             </a>
           </div>
         </div>
@@ -576,6 +582,15 @@
           </p>
         </article>
       </section>
+
+      <footer class="footer">
+        <span class="footer-title">
+          Zgoda i klauzula informacyjna w związku z przetwarzaniem danych na podstawie zgody osoby, której dane dotyczą
+        </span>
+        Wyrażam zgodę na przetwarzanie moich danych osobowych zawartych w CV
+        dla potrzeb niezbędnych do realizacji procesu rekrutacji zgodnie z art.
+        6 ust. 1 lit. a RODO.
+      </footer>
 
     </main>
   </body>

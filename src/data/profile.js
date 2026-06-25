@@ -14,10 +14,14 @@ export const languageThemes = {
     surface: "#ffffff",
     text: "#172033",
     border: "#d9e4f5",
+    buttonText: "#ffffff",
+    darkAccentText: "#9cc2ff",
+    darkButtonGradient:
+      "linear-gradient(135deg, #2563eb 0%, #1d4ed8 45%, #be123c 100%)",
     drawerGradient:
       "linear-gradient(180deg, #1f4f9f 0%, #ffffff 46%, #c8102e 100%)",
     buttonGradient:
-      "linear-gradient(135deg, #1f4f9f 0%, #ffffff 50%, #c8102e 100%)",
+      "linear-gradient(135deg, #173f80 0%, #1f4f9f 46%, #9f1239 100%)",
     cardGradient:
       "linear-gradient(135deg, rgba(31, 79, 159, 0.1), rgba(255, 255, 255, 0.95) 46%, rgba(200, 16, 46, 0.1))",
     glow: "0 18px 46px rgba(31, 79, 159, 0.2), 16px 18px 42px rgba(200, 16, 46, 0.16)",
@@ -35,6 +39,8 @@ export const languageThemes = {
     surface: "#ffffff",
     text: "#172033",
     border: "#c7dbff",
+    buttonText: "#ffffff",
+    darkAccentText: "#9cc2ff",
     drawerGradient:
       "linear-gradient(180deg, #0057b7 0%, #0057b7 48%, #ffd700 52%, #ffd700 100%)",
     buttonGradient:
@@ -56,6 +62,8 @@ export const languageThemes = {
     surface: "#ffffff",
     text: "#1f1720",
     border: "#ffd1da",
+    buttonText: "#1f1720",
+    darkAccentText: "#ff9fb2",
     drawerGradient:
       "linear-gradient(180deg, #ffffff 0%, #ffffff 48%, #dc143c 52%, #dc143c 100%)",
     buttonGradient:
