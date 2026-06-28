@@ -24,7 +24,6 @@ import {
   Cloud,
   Code2,
   Github,
-  Headphones,
   Linkedin,
   Mail,
   Menu,
@@ -43,8 +42,8 @@ import profilePhoto from "../assets/images/me.png";
 import { languageThemes, languages, socialLinks } from "./data/profile.js";
 
 const navItems = ["about", "experience", "skills", "projects", "contact"];
-const projectIcons = [ShieldCheck, Cloud, TerminalSquare];
-const experienceIcons = [Briefcase, Headphones, Activity];
+const projectIcons = [TerminalSquare, Activity, Cloud];
+const experienceIcons = [TerminalSquare, Activity, ShieldCheck];
 
 function createAppearancePalette(basePalette, isDark) {
   if (!isDark) {
@@ -463,56 +462,45 @@ function App() {
             <Box as="section" id="experience" scrollMarginTop="96px">
               <Stack gap="8">
                 <SectionHeading eyebrow={t("experience.eyebrow")} palette={palette} title={t("experience.title")} />
-                <Grid gap="6" templateColumns={{ base: "1fr", lg: "0.8fr 1.2fr" }}>
-                  <Box
-                    bg={palette.cardGradient}
-                    border="1px solid"
-                    borderColor={palette.border}
-                    boxShadow={palette.glow}
-                    p={{ base: "6", md: "8" }}
-                    rounded="2xl"
-                  >
-                    <Text color={palette.bodyText} fontSize={{ base: "md", md: "lg" }} lineHeight="1.8">
-                      {t("experience.body")}
-                    </Text>
-                  </Box>
-                  <SimpleGrid columns={{ base: 1, md: 3 }} gap="4">
-                    {experienceItems.map((item, index) => {
-                      const ExperienceIcon = experienceIcons[index] || Briefcase;
-                      return (
-                        <Stack
-                          bg={palette.elevatedBg}
-                          border="1px solid"
-                          borderColor={palette.border}
-                          boxShadow={palette.cardShadow}
-                          gap="4"
-                          key={item.title}
-                          p="5"
+                <Text color={palette.sectionNote} maxW="720px">
+                  {t("experience.body")}
+                </Text>
+                <SimpleGrid columns={{ base: 1, md: 3 }} gap="5">
+                  {experienceItems.map((item, index) => {
+                    const ExperienceIcon = experienceIcons[index] || Briefcase;
+                    return (
+                      <Stack
+                        bg={palette.cardGradient}
+                        border="1px solid"
+                        borderColor={palette.border}
+                        boxShadow={palette.cardShadow}
+                        gap="5"
+                        h="100%"
+                        key={item.title}
+                        p="6"
+                        rounded="2xl"
+                      >
+                        <Box
+                          bg={palette.muted}
+                          color={palette.accentText}
+                          p="3"
                           rounded="xl"
+                          w="fit-content"
                         >
-                          <Box
-                            bg={palette.buttonGradient}
-                            boxShadow={palette.iconPanelShadow}
-                            color={palette.buttonText}
-                            p="3"
-                            rounded="lg"
-                            w="fit-content"
-                          >
-                            <ExperienceIcon size={22} />
-                          </Box>
-                          <Stack gap="2">
-                            <Heading fontSize="md" lineHeight="1.25">
-                              {item.title}
-                            </Heading>
-                            <Text color={palette.bodyText} fontSize="sm" lineHeight="1.65">
-                              {item.description}
-                            </Text>
-                          </Stack>
+                          <ExperienceIcon size={22} />
+                        </Box>
+                        <Stack gap="2">
+                          <Heading fontSize="md" lineHeight="1.25">
+                            {item.title}
+                          </Heading>
+                          <Text color={palette.bodyText} fontSize="sm" lineHeight="1.65">
+                            {item.description}
+                          </Text>
                         </Stack>
-                      );
-                    })}
-                  </SimpleGrid>
-                </Grid>
+                      </Stack>
+                    );
+                  })}
+                </SimpleGrid>
               </Stack>
             </Box>
 

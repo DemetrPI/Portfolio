@@ -186,7 +186,9 @@
       }
 
       .section {
+        break-inside: avoid;
         margin-bottom: 14px;
+        page-break-inside: avoid;
       }
 
       .card {
@@ -219,6 +221,18 @@
         display: flex;
         flex-wrap: wrap;
         gap: 5px;
+      }
+
+      aside .section {
+        margin-bottom: 10px;
+      }
+
+      aside .chips {
+        gap: 4px;
+      }
+
+      aside .side-text {
+        margin-bottom: 7px;
       }
 
       .chip {
@@ -408,6 +422,14 @@
           </section>
 
           <section class="section">
+            <h2>Languages</h2>
+            <p class="side-text">
+              Ukrainian: native; English: working proficiency; Polish: B1
+              conversational.
+            </p>
+          </section>
+
+          <section class="section">
             <h2>Education</h2>
             <p class="side-title">Ph.D. in Public Administration</p>
             <p class="side-text">
@@ -427,14 +449,6 @@
             <h2>Certifications</h2>
             <p class="side-text">
               Microsoft Azure Fundamentals (AZ-900).
-            </p>
-          </section>
-
-          <section class="section">
-            <h2>Languages</h2>
-            <p class="side-text">
-              Ukrainian: native; English: working proficiency; Polish: B1
-              conversational.
             </p>
           </section>
         </aside>
@@ -478,9 +492,9 @@
                   initiative that delivered $500k+ in cost optimization.
                 </li>
                 <li>
-                  Developed SPL-based observability dashboards and used Splunk
-                  Dynamic Templates (Loki) to track infrastructure state and
-                  lifecycle events across the fleet.
+                  Built Splunk Dashboard Studio views powered by SPL queries to
+                  track AWS RDS engine versions, instance types, processor
+                  families, EOL status, and lifecycle events across the fleet.
                 </li>
               </ul>
             </article>
@@ -515,20 +529,25 @@
       <section class="section">
         <h2>Earlier Experience</h2>
         <article class="card">
-          <h3>Legal Adviser & Compliance Specialist</h3>
+          <h3>Legal Representative & Compliance Specialist</h3>
           <p class="meta">Private practice / Medpos Ltd. | 2013 - 2022</p>
           <ul>
             <li>
-              Managed legal analysis, contracts, documentation, and regulatory
-              compliance work, strengthening the audit-oriented mindset now
-              applied to DevSecOps and platform engineering.
+              Represented companies and individuals in court, defending their
+              interests while building stress resilience, persuasive
+              communication, and structured argumentation.
+            </li>
+            <li>
+              Prepared lawsuits, responses to lawsuits, objections, and
+              supporting court documents, distilling large volumes of evidence
+              and records into precise, submission-ready materials.
             </li>
           </ul>
         </article>
       </section>
 
       <section class="section">
-        <h2>Selected Projects</h2>
+        <h2>Selected Engineering Work</h2>
         <article class="card">
           <h3>Splunk Operator: PostgreSQL Platform Controllers</h3>
           <p class="meta">
@@ -544,6 +563,24 @@
           </p>
           <p class="project-links">
             <a href="https://github.com/splunk/splunk-operator/tree/feature/database-controllers">Repository</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>AWS RDS Fleet Upgrade & Graviton Migration</h3>
+          <p class="meta">
+            AWS RDS, Terraform, Python, Search Processing Language (SPL),
+            Splunk Dashboard Studio
+          </p>
+          <p>
+            Built Terraform and Python automation for a large-scale AWS RDS
+            fleet upgrade and Intel-to-Graviton migration, contributing to a
+            team initiative that delivered $500k+ in cost optimization. Created
+            a Splunk Dashboard Studio view powered by SPL queries to surface RDS
+            versions, instance types, processor families, days to end of
+            support, EOL status, and fleet distribution through charts,
+            histograms, and pie charts with filters for region, processor,
+            instance type, version, and EOL status.
           </p>
         </article>
 
