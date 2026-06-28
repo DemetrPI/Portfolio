@@ -16,6 +16,7 @@ I wanted the site to be fast, accessible, and easy to navigate. Here is what it 
 If you are poking around to see what I build, the portfolio specifically highlights:
 
 * **Splunk Operator:** PostgreSQL Platform Controllers
+* **AWS RDS Fleet Upgrade & Graviton Migration**
 * **Serverless Cloud-Native Web Application**
 
 ## Under the Hood (The Stack)

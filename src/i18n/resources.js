@@ -35,22 +35,22 @@ export const resources = {
       experience: {
         eyebrow: "Enterprise background",
         title: "Scaling, securing, and optimizing enterprise infrastructure",
-        body: "My background spans deep technical security support for Microsoft cloud ecosystems and large-scale infrastructure automation, optimization, and platform engineering work across Cisco / Splunk environments.",
+        body: "My background spans platform engineering work across Cisco / Splunk environments, large-scale infrastructure automation and optimization, and deep technical security support for Microsoft cloud ecosystems.",
         items: [
-          {
-            title: "Microsoft Defender for Cloud support (via LTIMindtree)",
-            description:
-              "Provided advanced DevSecOps support for enterprise environments, focusing on Cloud Security Posture Management, workload protection, and complex cloud security incident resolution.",
-          },
-          {
-            title: "Splunk (Cloud Operations)",
-            description:
-              "Engineered Terraform and Python automation for a large-scale AWS RDS fleet upgrade and Intel-to-Graviton migration, a team initiative that delivered $500k+ in cost optimization. Developed SPL-based observability dashboards and used Splunk Dynamic Templates (Loki) to track infrastructure state and lifecycle events.",
-          },
           {
             title: "Platform Engineering (Cisco/Splunk)",
             description:
               "Extended Cisco / Splunk platform work into Kubernetes operator development, building higher-level abstractions for stateful workloads in Go. Focused on PostgreSQL Day-1/Day-2 lifecycle automation, leveraging AI-augmented workflows for rapid iteration and debugging.",
+          },
+          {
+            title: "Splunk (Cloud Operations)",
+            description:
+              "Engineered Terraform and Python automation for a large-scale AWS RDS fleet upgrade and Intel-to-Graviton migration, a team initiative that delivered $500k+ in cost optimization. Built Splunk Dashboard Studio views powered by SPL queries to track AWS RDS versions, instance types, processor families, EOL status, and lifecycle events.",
+          },
+          {
+            title: "Microsoft Defender for Cloud support (via LTIMindtree)",
+            description:
+              "Provided advanced DevSecOps support for enterprise environments, focusing on Cloud Security Posture Management, workload protection, and complex cloud security incident resolution.",
           },
         ],
       },
@@ -102,15 +102,15 @@ export const resources = {
               "Firebase",
               "MongoDB",
               "Splunk SPL",
-              "Splunk Dynamic Templates (Loki)",
+              "Splunk Dashboard Studio",
             ],
           },
         ],
       },
       projects: {
         eyebrow: "Selected work",
-        title: "Platform engineering projects",
-        note: "Selected projects spanning Kubernetes operator development and serverless delivery.",
+        title: "Selected engineering work",
+        note: "Selected work spanning Kubernetes operator development, AWS infrastructure optimization, and serverless delivery.",
         live: "Live demo",
         repo: "Repository",
         items: [
@@ -122,6 +122,13 @@ export const resources = {
               "Engineered core APIs, including PostgresCluster, PostgresDatabase, and class-based provisioning primitives, to establish a higher-level PostgreSQL platform layer for Splunk on Kubernetes. Added CNPG-backed reconciliation and Day-1/Day-2 lifecycle management for enterprise stateful workloads.",
             repoUrl:
               "https://github.com/splunk/splunk-operator/tree/feature/database-controllers",
+          },
+          {
+            title: "AWS RDS Fleet Upgrade & Graviton Migration",
+            focus:
+              "AWS RDS, Terraform, Python, Search Processing Language (SPL), Splunk Dashboard Studio",
+            description:
+              "Built Terraform and Python automation for a large-scale AWS RDS fleet upgrade and Intel-to-Graviton migration, contributing to a team initiative that delivered $500k+ in cost optimization. Created Splunk Dashboard Studio views powered by SPL queries to surface RDS versions, instance types, processor families, EOL status, and fleet distribution.",
           },
           {
             title: "Serverless Cloud-Native Web Application",
@@ -188,22 +195,22 @@ export const resources = {
       experience: {
         eyebrow: "Enterprise background",
         title: "Масштабування, захист та оптимізація enterprise-інфраструктури",
-        body: "Мій досвід охоплює глибоку технічну підтримку безпеки для хмарних екосистем Microsoft, а також масштабну автоматизацію інфраструктури, оптимізацію та platform engineering у середовищах Cisco / Splunk.",
+        body: "Мій досвід охоплює platform engineering у середовищах Cisco / Splunk, масштабну автоматизацію та оптимізацію інфраструктури, а також глибоку технічну підтримку безпеки для хмарних екосистем Microsoft.",
         items: [
-          {
-            title: "Підтримка Microsoft Defender for Cloud (через LTIMindtree)",
-            description:
-              "Надавав розширену DevSecOps-підтримку для enterprise-середовищ, фокусуючись на Cloud Security Posture Management, захисті робочих навантажень та вирішенні складних інцидентів хмарної безпеки.",
-          },
-          {
-            title: "Splunk (Cloud Operations)",
-            description:
-              "Розробляв автоматизацію з Terraform та Python для масштабного оновлення парку AWS RDS і міграції з Intel на Graviton, командної ініціативи, що принесла понад $500 тис. економії. Створив SPL-дашборди для моніторингу стану інфраструктури та використовував Splunk Dynamic Templates (Loki).",
-          },
           {
             title: "Platform Engineering (Cisco/Splunk)",
             description:
               "Розширював роботу над платформами Cisco/Splunk через розробку Kubernetes-операторів і створення високорівневих абстракцій для stateful-навантажень на Go. Фокусувався на автоматизації Day-1/Day-2 життєвого циклу PostgreSQL з використанням AI-асистування для швидкої ітерації та дебагінгу.",
+          },
+          {
+            title: "Splunk (Cloud Operations)",
+            description:
+              "Розробляв автоматизацію з Terraform та Python для масштабного оновлення парку AWS RDS і міграції з Intel на Graviton, командної ініціативи, що принесла понад $500 тис. економії. Створив дашборди в Splunk Dashboard Studio на основі SPL-запитів для відстеження версій AWS RDS, типів інстансів, типів процесорів, EOL-статусу та подій життєвого циклу.",
+          },
+          {
+            title: "Підтримка Microsoft Defender for Cloud (через LTIMindtree)",
+            description:
+              "Надавав розширену DevSecOps-підтримку для enterprise-середовищ, фокусуючись на Cloud Security Posture Management, захисті робочих навантажень та вирішенні складних інцидентів хмарної безпеки.",
           },
         ],
       },
@@ -255,15 +262,15 @@ export const resources = {
               "Firebase",
               "MongoDB",
               "Splunk SPL",
-              "Splunk Dynamic Templates (Loki)",
+              "Splunk Dashboard Studio",
             ],
           },
         ],
       },
       projects: {
         eyebrow: "Вибрані роботи",
-        title: "Platform engineering проєкти",
-        note: "Вибрані проєкти, що охоплюють розробку Kubernetes-операторів та serverless-доставку.",
+        title: "Вибрані інженерні роботи",
+        note: "Вибрані роботи, що охоплюють розробку Kubernetes-операторів, оптимізацію AWS-інфраструктури та serverless-доставку.",
         live: "Live demo",
         repo: "Repository",
         items: [
@@ -275,6 +282,13 @@ export const resources = {
               "Розробив ключові API, зокрема PostgresCluster, PostgresDatabase та примітиви class-based provisioning, щоб створити високорівневий платформний прошарок PostgreSQL для Splunk у Kubernetes. Додав CNPG-backed reconciliation та управління Day-1/Day-2 життєвим циклом для enterprise stateful-навантажень.",
             repoUrl:
               "https://github.com/splunk/splunk-operator/tree/feature/database-controllers",
+          },
+          {
+            title: "AWS RDS Fleet Upgrade & Graviton Migration",
+            focus:
+              "AWS RDS, Terraform, Python, Search Processing Language (SPL), Splunk Dashboard Studio",
+            description:
+              "Розробляв автоматизацію з Terraform та Python для масштабного оновлення парку AWS RDS і міграції з Intel на Graviton, долучившись до командної ініціативи, що принесла понад $500 тис. економії. Створив дашборди в Splunk Dashboard Studio на основі SPL-запитів для відображення версій RDS, типів інстансів, сімейств процесорів, EOL-статусу та розподілу флоту.",
           },
           {
             title: "Serverless Cloud-Native Web Application",
@@ -342,22 +356,22 @@ export const resources = {
         eyebrow: "Enterprise background",
         title:
           "Skalowanie, zabezpieczanie i optymalizacja infrastruktury enterprise",
-        body: "Moje doświadczenie obejmuje głębokie wsparcie techniczne ds. bezpieczeństwa ekosystemów chmurowych Microsoft, a także automatyzację infrastruktury na dużą skalę, optymalizację i platform engineering w środowiskach Cisco / Splunk.",
+        body: "Moje doświadczenie obejmuje platform engineering w środowiskach Cisco / Splunk, automatyzację i optymalizację infrastruktury na dużą skalę oraz głębokie wsparcie techniczne ds. bezpieczeństwa ekosystemów chmurowych Microsoft.",
         items: [
-          {
-            title: "Wsparcie Microsoft Defender for Cloud (przez LTIMindtree)",
-            description:
-              "Zapewniałem zaawansowane wsparcie DevSecOps dla środowisk enterprise, ze szczególnym uwzględnieniem Cloud Security Posture Management, ochrony obciążeń roboczych oraz rozwiązywania złożonych incydentów bezpieczeństwa w chmurze.",
-          },
-          {
-            title: "Splunk (Cloud Operations)",
-            description:
-              "Tworzyłem automatyzację z użyciem Terraform i Python dla dużej aktualizacji floty AWS RDS oraz migracji z Intel na Graviton, zespołowej inicjatywy, która przyniosła ponad 500 tys. USD oszczędności. Zbudowałem dashboardy observability oparte na SPL do śledzenia stanu infrastruktury oraz wykorzystywałem Splunk Dynamic Templates (Loki).",
-          },
           {
             title: "Platform Engineering (Cisco/Splunk)",
             description:
               "Rozszerzałem prace nad platformą Cisco / Splunk o rozwój operatorów Kubernetes i budowanie abstrakcji wyższego poziomu dla obciążeń stateful w Go. Skupiałem się na automatyzacji cyklu życia Day-1/Day-2 PostgreSQL, wykorzystując wspomagane przez AI workflow do szybkiej iteracji i debugowania.",
+          },
+          {
+            title: "Splunk (Cloud Operations)",
+            description:
+              "Tworzyłem automatyzację z użyciem Terraform i Python dla dużej aktualizacji floty AWS RDS oraz migracji z Intel na Graviton, zespołowej inicjatywy, która przyniosła ponad 500 tys. USD oszczędności. Zbudowałem dashboardy w Splunk Dashboard Studio oparte na zapytaniach SPL do śledzenia wersji AWS RDS, typów instancji, rodzin procesorów, statusu EOL oraz zdarzeń cyklu życia.",
+          },
+          {
+            title: "Wsparcie Microsoft Defender for Cloud (przez LTIMindtree)",
+            description:
+              "Zapewniałem zaawansowane wsparcie DevSecOps dla środowisk enterprise, ze szczególnym uwzględnieniem Cloud Security Posture Management, ochrony obciążeń roboczych oraz rozwiązywania złożonych incydentów bezpieczeństwa w chmurze.",
           },
         ],
       },
@@ -409,15 +423,15 @@ export const resources = {
               "Firebase",
               "MongoDB",
               "Splunk SPL",
-              "Splunk Dynamic Templates (Loki)",
+              "Splunk Dashboard Studio",
             ],
           },
         ],
       },
       projects: {
         eyebrow: "Wybrane prace",
-        title: "Projekty platform engineering",
-        note: "Wybrane projekty obejmujące rozwój operatorów Kubernetes oraz serverless delivery.",
+        title: "Wybrane prace inżynierskie",
+        note: "Wybrane prace obejmujące rozwój operatorów Kubernetes, optymalizację infrastruktury AWS oraz serverless delivery.",
         live: "Live demo",
         repo: "Repository",
         items: [
@@ -429,6 +443,13 @@ export const resources = {
               "Opracowałem kluczowe API, w tym PostgresCluster, PostgresDatabase oraz mechanizmy class-based provisioning, aby zbudować wyższą warstwę platformową PostgreSQL dla Splunk na Kubernetes. Dodałem CNPG-backed reconciliation i zarządzanie cyklem życia Day-1/Day-2 dla enterprise stateful workloads.",
             repoUrl:
               "https://github.com/splunk/splunk-operator/tree/feature/database-controllers",
+          },
+          {
+            title: "AWS RDS Fleet Upgrade & Graviton Migration",
+            focus:
+              "AWS RDS, Terraform, Python, Search Processing Language (SPL), Splunk Dashboard Studio",
+            description:
+              "Tworzyłem automatyzację z użyciem Terraform i Python dla dużej aktualizacji floty AWS RDS oraz migracji z Intel na Graviton, wspierając zespołową inicjatywę, która przyniosła ponad 500 tys. USD oszczędności. Zbudowałem widoki w Splunk Dashboard Studio oparte na zapytaniach SPL, pokazujące wersje RDS, typy instancji, rodziny procesorów, status EOL oraz rozkład floty.",
           },
           {
             title: "Serverless Cloud-Native Web Application",
