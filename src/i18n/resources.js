@@ -110,7 +110,7 @@ export const resources = {
       projects: {
         eyebrow: "Selected work",
         title: "Platform engineering projects",
-        note: "Selected projects spanning Kubernetes operator development, serverless delivery, and secure communication infrastructure.",
+        note: "Selected projects spanning Kubernetes operator development and serverless delivery.",
         live: "Live demo",
         repo: "Repository",
         items: [
@@ -130,16 +130,6 @@ export const resources = {
               "Architected and deployed a multilingual web application with a Go-based REST API and React frontend. Containerized the backend for Google Cloud Run, enabling scale-to-zero delivery, and integrated Firebase for NoSQL-backed state and localization support.",
             liveUrl: "https://hgame.i-dmytro.org/",
             repoUrl: "https://github.com/DmytroPI-dev/go-hangman",
-          },
-          {
-            title: "Secure Communication Infrastructure",
-            focus: "Go, WebSockets, WebRTC, TURN, AES-GCM, OCI, Terraform",
-            description:
-              "Architected a secure real-time communication platform deployed on OCI and provisioned entirely with Terraform. Built a hardened deployment path with custom coturn configuration, DTLS fingerprint verification, ephemeral state cleanup, and AES-GCM payload encryption.",
-            demoNote:
-              "Access rooms using a fictional city and today's date (DDMMYY).",
-            liveUrl: "https://messenger.dmytro-dev.net",
-            repoUrl: "https://github.com/DmytroPI-dev/secure-messenger",
           },
         ],
       },
@@ -273,7 +263,7 @@ export const resources = {
       projects: {
         eyebrow: "Вибрані роботи",
         title: "Platform engineering проєкти",
-        note: "Вибрані проєкти, що охоплюють розробку Kubernetes-операторів, serverless-доставку та безпечну комунікаційну інфраструктуру.",
+        note: "Вибрані проєкти, що охоплюють розробку Kubernetes-операторів та serverless-доставку.",
         live: "Live demo",
         repo: "Repository",
         items: [
@@ -293,16 +283,6 @@ export const resources = {
               "Спроєктував та розгорнув багатомовний вебзастосунок з Go REST API та React-фронтендом. Контейнеризував бекенд для Google Cloud Run (scale-to-zero) та інтегрував Firebase для керування NoSQL-станом і підтримки локалізації.",
             liveUrl: "https://hgame.i-dmytro.org/",
             repoUrl: "https://github.com/DmytroPI-dev/go-hangman",
-          },
-          {
-            title: "Secure Communication Infrastructure",
-            focus: "Go, WebSockets, WebRTC, TURN, AES-GCM, OCI, Terraform",
-            description:
-              "Спроєктував платформу безпечної комунікації в реальному часі, розгорнуту в OCI, з інфраструктурою, повністю описаною в Terraform. Побудував захищений шлях розгортання з власною конфігурацією coturn, перевіркою DTLS fingerprint, ефемерним очищенням стану та AES-GCM шифруванням корисного навантаження.",
-            demoNote:
-              "Для доступу до кімнат використовуйте вигадане місто та поточну дату (DDMMYY).",
-            liveUrl: "https://messenger.dmytro-dev.net",
-            repoUrl: "https://github.com/DmytroPI-dev/secure-messenger",
           },
         ],
       },
@@ -437,7 +417,7 @@ export const resources = {
       projects: {
         eyebrow: "Wybrane prace",
         title: "Projekty platform engineering",
-        note: "Wybrane projekty obejmujące rozwój operatorów Kubernetes, serverless delivery oraz bezpieczną infrastrukturę komunikacyjną.",
+        note: "Wybrane projekty obejmujące rozwój operatorów Kubernetes oraz serverless delivery.",
         live: "Live demo",
         repo: "Repository",
         items: [
@@ -457,16 +437,6 @@ export const resources = {
               "Zaprojektowałem i wdrożyłem wielojęzyczną aplikację internetową z Go REST API i frontendem w React. Skonteneryzowałem backend dla Google Cloud Run, umożliwiając scale-to-zero, i zintegrowałem Firebase do obsługi stanu NoSQL oraz lokalizacji.",
             liveUrl: "https://hgame.i-dmytro.org/",
             repoUrl: "https://github.com/DmytroPI-dev/go-hangman",
-          },
-          {
-            title: "Secure Communication Infrastructure",
-            focus: "Go, WebSockets, WebRTC, TURN, AES-GCM, OCI, Terraform",
-            description:
-              "Zaprojektowałem bezpieczną platformę komunikacji w czasie rzeczywistym wdrożoną na OCI, z infrastrukturą w pełni opisaną w Terraform. Zbudowałem zabezpieczoną ścieżkę wdrażania z niestandardową konfiguracją coturn, weryfikacją DTLS fingerprint, czyszczeniem stanu tymczasowego i szyfrowaniem ładunku AES-GCM.",
-            demoNote:
-              "Aby uzyskać dostęp do pokoi, użyj fikcyjnego miasta i dzisiejszej daty (DDMMYY).",
-            liveUrl: "https://messenger.dmytro-dev.net",
-            repoUrl: "https://github.com/DmytroPI-dev/secure-messenger",
           },
         ],
       },
