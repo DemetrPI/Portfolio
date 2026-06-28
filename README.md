@@ -17,7 +17,6 @@ If you are poking around to see what I build, the portfolio specifically highlig
 
 * **Splunk Operator:** PostgreSQL Platform Controllers
 * **Serverless Cloud-Native Web Application**
-* **Secure Communication Infrastructure**
 
 ## Under the Hood (The Stack)
 
